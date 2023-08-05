@@ -13,11 +13,16 @@ header
     margin-right: auto;
 }
 
-h1
+div
 {
-    text-align: center;
-    float: left;
-    margin-top: 0;
+    display: inline-block;
+}
+
+div nav ul li
+{
+    display: inline-block;
+    margin-left: 3.2rem;
+    list-style-type: none;
 }
 
 .welcome_msg
@@ -28,22 +33,8 @@ h1
 
 ul
 {
+    width: 100%;
     padding-left: 0;
-}
-
-li 
-{
-    float: left;
-    list-style-type: none;
-    display: block;
-    margin-right: 0rem;
-    margin-left: 1.8rem;
-    margin-top: 0.6rem;
-}
-
-.clear_fix
-{
-    clear: both;
 }
 
 a
@@ -54,7 +45,7 @@ a
 
 body
 {
-    width: 100%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
