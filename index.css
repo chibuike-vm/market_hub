@@ -1,0 +1,82 @@
+html
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+header
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1
+{
+    text-align: center;
+    float: left;
+    margin-top: 0;
+}
+
+.welcome_msg
+{
+    width: 100%;
+    text-align: center;
+}
+
+ul
+{
+    padding-left: 0;
+}
+
+li 
+{
+    float: left;
+    list-style-type: none;
+    display: block;
+    margin-right: 0rem;
+    margin-left: 1.8rem;
+    margin-top: 0.6rem;
+}
+
+.clear_fix
+{
+    clear: both;
+}
+
+a
+{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+body
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img{
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+section
+{
+    width: 100%;
+    margin-top: 0;
+}
+
+#user_id
+{
+    text-transform: capitalize;
+}

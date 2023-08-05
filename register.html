@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=header, initial-scale=1.0, maximum-scale=1.0">
+    <title>Freshenger || Register</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            CREATE YOUR ACCOUNT
+        </h1>
+    </header>
+    <section>
+        <form action="./login.html" method="get" enctype="application/x-www-form-urlencoded">
+            <fieldset>
+                <legend>Private Info</legend>
+                <label for="fname">FULL NAME:</label>
+                <input type="text" name="fullname" id="fname" class="inputs" required><br><br>
+
+                <label for="uname">USER NAME:</label>
+                <input type="text" name="username" id="uname" class="inputs" required><br><br>
+
+                <label for="pwrd">PASSWORD:</label>
+                <input type="password" name="pword" id="pwrd" class="inputs" required><br><br>
+
+                <label for="pwrd">CONFIRM PASSWORD:</label>
+                <input type="password" name="confirm_pword" id="conf_pwrd" class="inputs" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Info</legend>  
+                <label for="pnumber">PHONE NUMBER:</label>
+                <input type="tel" name="phone_number" id="pnumber" class="inputs" required><br><br>
+                
+                <label for="e_addr">EMAIL ADDRESS:</label>
+                <input type="email" name="email_address" id="e_addr" class="inputs" required><br><br>
+            </fieldset><br>
+
+            <input type="checkbox" id="id_status" required>
+            <label for="id_status" class="checkbox_label">I agree to accept the company's terms and conditions.</label><br><br>
+
+            <p id="feedback"></p>
+            <input type="submit" value="Register" id="submitbutton" class="inputs">
+        </form>
+    </section>
+</body>
+<script src="./index.js"></script>
+</html>
