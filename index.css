@@ -71,3 +71,36 @@ section
 {
     text-transform: capitalize;
 }
+
+.hide
+{
+    display: none;
+}
+
+ul li
+{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-left: 1rem;
+}
+
+button,
+#username_id,
+#submit_id
+{
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.2rem 0 0.2rem 0;   
+}
+
+label
+{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+::marker
+{
+    font-size: 1.4rem;
+    color: black;
+}

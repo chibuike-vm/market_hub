@@ -10,6 +10,7 @@ for (let i = 0; i < 6; i++) {
 
 let submitButton = document.getElementById("submitbutton");
 let loginButton = document.getElementById("login");
+let spanElement = document.getElementById("user_id");
 
 if (submitButton !== null)
 {
@@ -20,7 +21,6 @@ if (submitButton !== null)
 
 		for (let i = 0; i < 6; i++) 
 		{	
-			console.log(`${queryArray[i]}: `, formInputs[i].value);
 			localStorage.setItem(queryArray[i], formInputs[i].value);
 		}
 
@@ -60,10 +60,80 @@ if (loginButton !== null)
     });
 }
 
-let spanElement = document.getElementById("user_id");
-
 if (spanElement !== null)
 {
 	let username = localStorage.getItem("username");
 	spanElement.textContent = username;
+}
+
+let objectData =
+{
+	vegetables: [{"name": "ugu", "amount": "$100"}, {"name": "green", "amount": "$200"}],
+	fruits: [{"name": "mango", "amount": "$200"}, {"name": "orange", "amount": "$400"}]
+};
+
+let dashboardData =
+{
+	storeJSONButton: document.getElementById("store_json"),
+	retrieveJSONButton: document.getElementById("retrieve_json"),
+	displayListData: document.getElementById("display_msg"),
+	feedBackParagraph: document.getElementById("feed_back_msg"),
+	chngeYourUnameButton: document.getElementById("button_id"),
+	chngeYourUnameArtDisplay: document.getElementById("article_display"),
+	chngeYourUnameInput: document.getElementById("username_id"),
+	chngeYourUnameSubmitButton: document.getElementById("submit_id"),
+	returnSubmitMsg: document.getElementById("return_info")
+}
+
+if (dashboardData.storeJSONButton !== null)
+{
+	dashboardData.storeJSONButton.addEventListener("click", function () {
+		let objectDataStringified = JSON.stringify(objectData);
+		localStorage.setItem("json", objectDataStringified);
+		dashboardData.feedBackParagraph.textContent = "JSON data storage was successful!";
+		dashboardData.displayListData.setAttribute("class", "hide");
+	});
+}
+
+if (dashboardData.retrieveJSONButton !== null)
+{
+	dashboardData.retrieveJSONButton.addEventListener("click", function () {
+		let parsedJSON = JSON.parse(localStorage.getItem("json"));
+
+		let strData1 = "";
+		let strData2 = "";
+
+		for (let i = 0; i < 2; i++)
+		{
+			strData1 += `<li> ${parsedJSON.vegetables[i].name}: ${parsedJSON.vegetables[i].amount} </li>`;
+			strData2 += `<li> ${parsedJSON.fruits[i].name}: ${parsedJSON.fruits[i].amount} </li>`;
+		}
+		
+		dashboardData.feedBackParagraph.textContent = "JSON data retrieval and display was successful! See the data items below.";
+		dashboardData.displayListData.innerHTML = strData1 + strData2;
+		dashboardData.displayListData.removeAttribute("class");
+	});
+}
+
+if (dashboardData.chngeYourUnameButton !== null)
+{
+	dashboardData.chngeYourUnameButton.addEventListener("click", function () {
+		dashboardData.chngeYourUnameArtDisplay.removeAttribute("class");
+	});
+}
+
+if (dashboardData.chngeYourUnameSubmitButton !== null)
+{
+	dashboardData.chngeYourUnameSubmitButton.addEventListener("click", function () {
+		if (dashboardData.chngeYourUnameInput.validity.valueMissing === false)
+		{
+			localStorage.setItem("username", dashboardData.chngeYourUnameInput.value);
+			location.href = "./dashboard.html";
+		}
+		else
+		{
+			dashboardData.returnSubmitMsg.textContent = "The input field can't be empty.";
+				dashboardData.returnSubmitMsg.scrollIntoView(true);
+		}
+		});
 }

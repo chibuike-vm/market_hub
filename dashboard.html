@@ -10,12 +10,43 @@
 <body>
     <header>
         <h1 class="welcome_msg">
-            Dear <span id="user_id"></span>, Welcome to your Dashboard
+            Dear <span id="user_id"></span>, Welcome to your Dashboard!
         </h1>
     </header>
-    <section class="image">
+ 
+    <main class="image">
         <img src="./media/hero_image.jpg" alt="hero_image">
-    </section>
+    </main>
+
+    <aside>
+        <article>
+            <h2>TASKS TO DO</h2>
+            <ol>
+                <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li><br>
+                <a href="#button_id"><li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button></li></a>
+            </ol>
+
+            <p id="feed_back_msg"></p>
+
+            <section>
+                <ul id="display_msg"></ul>
+            </section>
+
+            <p>
+                You want to change your username? We've got you covered, just click the button below.<br><br>
+                <a href="#submit_id"><button id="button_id">Change Your Username</button></a>
+            </p>
+
+            <article id="article_display" class="hide">
+                <label for="username_id">Enter the New Username</label>
+                <input type="text" name="username" id="username_id" required>
+
+                <p id="return_info"></p>
+
+                <input type="button" value="Submit" id="submit_id">
+            </article>
+        </article>
+    </aside>
 </body>
 <script src="./index.js"></script>
 </html>
