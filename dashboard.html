@@ -14,39 +14,78 @@
         </h1>
     </header>
  
-    <main class="image">
-        <img src="./media/hero_image.jpg" alt="hero_image">
-    </main>
+    <section class="container">
+        <aside class="direct_container_child">
+            <article>
+                <h2>TASKS TO DO</h2>
+                <ol>
+                    <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
+                    <a href="#button_id"><li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button></li></a>
+                </ol>
 
-    <aside>
-        <article>
-            <h2>TASKS TO DO</h2>
-            <ol>
-                <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li><br>
-                <a href="#button_id"><li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button></li></a>
-            </ol>
+                <p id="feed_back_msg"></p>
 
-            <p id="feed_back_msg"></p>
+                <section>
+                    <ul id="display_msg"></ul>
+                </section>
 
-            <section>
-                <ul id="display_msg"></ul>
+                <p>
+                    You want to change your username? We've got you covered, just click the button below.<br><br>
+                    <a href="#submit_id"><button id="button_id">Change Your Username</button></a>
+                </p>
+
+                <article id="article_display" class="hide">
+                    <label for="username_id">Enter the New Username</label>
+                    <input type="text" name="username" id="username_id" required>
+
+                    <p id="return_info"></p>
+
+                    <input type="button" value="Submit" id="submit_id">
+                </article>
+            </article>
+        </aside>
+
+        <main class="image direct_container_child">
+            <section class="main_sec">
+                <article>
+                    <img src="media/bitter_leaf.jpg" alt="Bitter Leaves Image">
+                    <h3>Bitter Leaf</h3>
+                    <p>Unit Price - #200</p>
+                </article>
+                <article>
+                    <img src="media/green.jpg" alt="Green Leaves Image">
+                    <h3>Green</h3>
+                    <p>Unit Price - #200</p>
+                </article>
             </section>
 
-            <p>
-                You want to change your username? We've got you covered, just click the button below.<br><br>
-                <a href="#submit_id"><button id="button_id">Change Your Username</button></a>
-            </p>
+            <section class="main_sec">
+                <article>
+                    <img src="media/oha.jpg" alt="Oha Leaves Image">
+                    <h3>Oha</h3>
+                    <p>Unit Price - #300</p>
+                </article>
+                <article>
+                    <img src="media/ugu.jpg" alt="Ugu Leaves Image">
+                    <h3>Ugu</h3>
+                    <p>Unit Price - #200</p>
+                </article>
+            </section>
 
-            <article id="article_display" class="hide">
-                <label for="username_id">Enter the New Username</label>
-                <input type="text" name="username" id="username_id" required>
-
-                <p id="return_info"></p>
-
-                <input type="button" value="Submit" id="submit_id">
-            </article>
-        </article>
-    </aside>
+            <section class="main_sec">
+                <article>
+                    <img src="media/water_leaf.jpg" alt="Water Leaves Image">
+                   <h3>Water Leaf</h3>
+                    <p>Unit Price - #400</p>
+                </article>
+                <article>
+                    <img src="media/okro.jpg" alt="Okro Leaves Image">
+                    <h3>Okro</h3>
+                    <p>Unit Price - #200</p>
+                </article>
+            </section>
+        </main>
+    </section>
 </body>
 <script src="./index.js"></script>
 </html>
