@@ -3,18 +3,18 @@
 }
 
 html {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 
     body {
-        width: 80%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-header {
+/* header {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -39,8 +39,49 @@ header {
     span {
         text-transform: capitalize;
     }
-}
 
+    svg {
+        display: block;
+    }
+}
+ */
+
+ header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    border: 0.1rem ridge black;
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .top {
+        background-color: white; 
+
+        h1 {
+            color: black;
+        }
+    }
+
+    svg,
+    h2,
+    h1 {
+        flex: auto;
+        text-align: center;
+    }  
+
+    span {
+        text-transform: capitalize;
+    }
+ }
+
+/* Home Page */
 div nav ul {
     display: flex;
     width: 100%;
@@ -60,7 +101,7 @@ div nav ul {
         text-decoration: none;
         font-size: 1.5rem;
     }
-}
+} /* specific */
  
 img {
     display: block;
@@ -70,11 +111,11 @@ img {
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 
     button {
         width: 100%;
-        font-size: 1rem;
+        font-size: 1.6rem;
         padding: 0.2rem 0 0.2rem 0;
     }
 }
@@ -84,7 +125,7 @@ section {
     margin-top: 0;
 
     ul li {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         text-transform: capitalize;
         margin-left: 1rem;
     }
@@ -97,43 +138,45 @@ section {
 #article_display {
     label {
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     input {
         width: 100%;
-        font-size: 1rem;
         padding: 0.2rem 0 0.2rem 0;
+        font-size: 1.6rem;
     }
 }
 
 .container {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 
     .direct_container_child {
         padding: 1rem 1rem;
     }
 
     aside {
-        width: 30%;
+        flex: auto;
         margin-right: 1rem; 
         padding: 1rem 1rem;
 
         h2 {
             margin-top: 0;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
     }
 
     main {
-        width: 68%;
+        flex: auto;
         padding: 1rem 1rem;
     }
 }
 
 .main_secs {
     display: flex;
+    flex-wrap: wrap;
 
     article {
         border: 0.2rem ridge rgb(11, 142, 50);
@@ -151,22 +194,19 @@ section {
     h3,
     p {
         text-align: center;
+        font-size: 1.6rem;
     } 
 }
 
-ol li {
-    font-size: 1rem;
-    line-height: 2;
 
-    ::marker {
-        font-size: 1.4rem;
-        color: black;
-    }
+ol li {
+    font-size: 1.6rem;
+    line-height: 3;
 
     button {
         width: 100%;
-        font-size: 1rem;
-        padding: 0.2rem 0 0.2rem 0;
+        font-size: 1.6rem;
+        padding: 0.2rem 0;
     }
 }
 
@@ -178,7 +218,7 @@ ol li {
     border-radius: 1.5rem;
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-weight: 500;
         margin: 0 0;
     }
@@ -189,5 +229,36 @@ ol li {
 
     hr {
         border: 0.1rem ridge rgb(14, 40, 14);
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+
+    .to_top {
+        text-align: center;
+
+        p {
+            font-size: 1.9rem;
+        }
+    }
+   
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        p {
+            width: math.div(100, 1) * 1%;
+            padding: 0.3rem;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            text-align: center;
+        }
     }
 }
