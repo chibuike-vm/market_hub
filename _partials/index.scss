@@ -1,10 +1,171 @@
 @use "sass:math";
-@import "small";
 
-//@media screen and (max-width: 768px) {
-   // @import "small";
-//}
+@import "main";
 
-//@media only screen and (min-width: 1024px) {
-  //  @import "large";
-//}
+
+@media only screen and (width > 412px) {
+  footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.8);
+  }
+
+  #footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  .to_top {
+    text-align: center;
+
+    p {
+        font-size: 1.4rem;
+    }
+  }
+
+  article.inner_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    section {
+      flex-basis: math.div(1,2) * 100%;
+    }
+
+    section:nth-child(9) {
+      flex-grow: 2;
+    }
+
+    section p {
+      // text-align: center;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      padding: 0.2rem;
+    } 
+  }
+}
+
+@media only screen and (width >= 768px) {
+  .header {
+    h2 {
+      font-size: 1.45em;
+      flex-grow: 2;
+    }
+  }
+
+  section.container {
+    flex-wrap: nowrap;
+  }
+
+  #aside {
+    flex-basis: 40%;
+  }
+}
+
+@media only screen and (width >= 820px) {
+
+  div.header,
+  .container,
+  #footer {
+    width: 80%;
+  }
+
+  .header {
+    h2 {
+      font-size: 1.45em;
+      flex-grow: 2;
+    }
+  }
+
+  #top_div {
+    display: none;
+  }
+
+  .container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  #aside {
+    flex-basis: 30%;
+  }
+
+  #header_large {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    article:nth-child(1) {
+      flex-grow: 4;
+
+      h1 {
+        text-align: left;
+      }
+    }
+
+    article:nth-child(3),
+    article:nth-child(4) {
+      margin-left: 0.3rem;
+    }
+    article {
+      flex: auto;
+
+      h1 {
+        text-align: right;
+        font-size: 1.3rem;
+      }
+    }
+
+    #svg_large {
+      height: 2.1rem;
+      width: auto;
+      display: block;
+      position: relative;
+      left: 0.6rem;
+    }
+  }
+
+
+  #footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  .to_top {
+    text-align: center;
+
+    p {
+        font-size: 1.4rem;
+    }
+  }
+
+  article.inner_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  section {
+      flex: auto;
+    }
+
+   /*  section:nth-child(9) {
+      flex-grow: 2;
+    } */
+
+    section p {
+      text-align: center;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      padding: 0.2rem;
+    } 
+  }
+}
