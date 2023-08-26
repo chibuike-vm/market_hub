@@ -27,32 +27,27 @@ header {
             display: none;
         }
 
-        div {
+        .top,
+        .header_large {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
         }
+      
+        h1 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            flex-basis: 100%;
+        }
 
-        .top {
-            display: flex;
-            flex-direction: row;
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            div,
-            h1,
-            svg {
-                flex: auto;
-            }
+        .header_large {
+            display: none;
         }
     }
 
-    h2,
-    h1 {
+    h2 {
         color: #ffffff;
         text-align: center;
         font-size: 1.4rem;
@@ -61,6 +56,10 @@ header {
     span {
         text-transform: capitalize;
     }
+}
+
+.top .fresh {
+    flex-grow: 2;
 }
  
 img {
