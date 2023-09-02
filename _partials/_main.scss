@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 html,
 body {
     max-width: 1920px;
@@ -9,14 +14,14 @@ body {
 body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content repeat(2, auto) max-content;
+    grid-template-rows: repeat(2, min-content) auto max-content;
     grid-row-gap: 1rem;
     margin-top: 0;
     
 }
 
 header {
-    background-color: rgb(19, 113, 196);
+    background-color: rgba(0, 0, 0, 0.8);
     grid-column-start: 1;
     grid-column-end: 13;
 
@@ -37,8 +42,11 @@ header {
         list-style-type: none;
     }
 
+    h1,
     a {
         text-decoration: none;
+        color: white;
+        font-size: 1.7rem;
     }
 
     .fresh li:nth-of-type(2) {
@@ -49,26 +57,28 @@ header {
 }
 
 aside {
-    background-color: aqua;
+    //background-color: aqua;
     grid-column-start: 1;
     grid-column-end: 13;
     padding: 0.4rem;
+
+    p {
+        font-size: 1.5rem;
+    }
 }
 
 main {
-    background-color: red;
+    //background-color: red;
     grid-column-start: 1;
     grid-column-end: 13;
     padding: 0.4rem;
 
     form {
-        box-sizing: border-box;
         padding: 1rem;
         width: 100%;
     }
 
     input {
-        box-sizing: border-box;
         width: 100%;
     }
 
@@ -83,19 +93,28 @@ main {
 }
 
 footer {
-    background-color:  rgb(236, 201, 7);
+    background-color: rgba(0, 0, 0, 0.8);
     grid-column-start: 1;
     grid-column-end: 13;
 
+    // Nested grid
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-items: center;
 
+
+    article:nth-of-type(1) {
+        width: 100%;
+        text-align: center;
+    }
+
     article {
-        grid-column-start: span 1;
+        grid-column-start: span 12;
     }
 
     p {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
+        color: white;
+        text-transform: capitalize;
     }
 }
