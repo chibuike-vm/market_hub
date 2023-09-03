@@ -6,11 +6,6 @@
         padding: 0.4rem;
     }
 
-    section,
-    aside {
-        width: 95%;
-    }
-
     aside {
         grid-column-start: 1;
         grid-column-end: span 4;

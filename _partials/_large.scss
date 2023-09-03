@@ -1,5 +1,5 @@
 main {
-    width: 90%;
+    width: 60%;
 }
 
 .footer {
@@ -17,11 +17,6 @@ main {
     section {
         grid-column-start: span 5;
         padding: 0.4rem;
-    }
-
-    section,
-    aside {
-        width: 95%;
     }
 
     aside {

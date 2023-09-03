@@ -1,5 +1,5 @@
 main {
-    width: 80%;
+    width: 60%;
     justify-self: center;
 }
   
@@ -9,11 +9,6 @@ main {
 
 #header_large {
     display: block;
-
-    li:nth-of-type(5) img {
-        width: 100%;
-        height: 3rem;
-    } 
 
     /* Nested Grid */
     .header_ul {
