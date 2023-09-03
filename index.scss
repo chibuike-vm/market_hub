@@ -4,7 +4,7 @@
 
 @import "_partials/main.scss";
 
-@media only screen and (width > 425px) {
+@media only screen and (width >= 412px) {
   @import "_partials/small.scss";
 }
 

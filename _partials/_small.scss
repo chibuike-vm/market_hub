@@ -25,3 +25,10 @@ aside {
         grid-column-start: span 12;
     }
 }
+
+/* dashboard.html */
+.dashboard_body {
+    main article {
+        grid-column-start: span 6;
+    }
+}
