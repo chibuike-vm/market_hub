@@ -12,10 +12,8 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 html,
 body {
-    max-width: 1920px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -24,32 +22,53 @@ body {
 body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, min-content) auto max-content;
+    grid-template-rows: min-content auto max-content;
     grid-row-gap: 1rem;
     margin-top: 0;
 }
 
-/* index.html */
+/* Index (index.html) Design */
 .index_body {
     background-color: rgba(200, 252, 191, 0.5);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content auto max-content;
     grid-row-gap: 0;
-    margin-top: 0;
 
     main img {
         width: 100%;
+        height: auto;
     }
-}/* end */
+}/* End of Index (index.html) Design */
 
+/* Keeping all containers at max-width of 1920px */
+.header_container,
+.main,
+.aside,
+.dashboard_container,
+.footer {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header Design */
 header {
     background-color: rgba(0, 0, 0, 0.8);
     grid-column-start: 1;
     grid-column-end: 13;
 
+    /* Nested Grid */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.header_container {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 13;
+
     img {
         cursor: pointer;
+        width: 100%;
+        height: 2.7rem;
     }
 
     .header_large {
@@ -86,7 +105,7 @@ header {
         padding-right: 0.8rem;
     }
 
-    /* Hamburger Items */
+    /* Hamburger Button Menu Design */
     .harmbuger_items {
         background-color: rgba(32, 21, 4, 0.5);
         padding-left: 0;
@@ -124,13 +143,18 @@ header {
        display: none;
     }/* End of Hamburger Items */
 }
+/* End of Header Design */
 
+/* Dashboard (dashboard.html) Design */
+.dashboard_container {
+    grid-column-start: 1;
+    grid-column-end: 13;
 
-/* dashboard.html */
-.dashboard_body {
+    /* Nested Grid */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content repeat(2, max-content) auto max-content;
+    grid-template-rows: repeat(2, max-content) auto;
+    grid-row-gap: 1rem;
 
     section {
         width: 90%;
@@ -163,7 +187,7 @@ header {
             text-align: center;
         }
 
-         ol li {
+        ol li {
             font-size: 1.5rem;
             line-height: 3;
         }
@@ -217,8 +241,10 @@ header {
         color: white;
         text-align: center;
     }
-}/* end */
+}
+/* End of Dashboard (dashboard.html) Design */
 
+/* Aside Design */
 aside {
     grid-column-start: 1;
     grid-column-end: 13;
@@ -228,8 +254,9 @@ aside {
         font-size: 1.5rem;
         padding: 0 2rem;
     }
-}
+}/* End of Aside Design */
 
+/* Main Design */
 main {
     grid-column-start: 1;
     grid-column-end: 13;
@@ -244,7 +271,7 @@ main {
         width: 100%;
     }
 
-    /* register.html */
+    /* Register (register.html) Specific Design */
     .checkbox_label,
     legend {
         font-size: 1.3rem;
@@ -268,19 +295,22 @@ main {
 
     .feedback {
         display: none;
-    }/* end */
-}
+    }/* End of Register (register.html) Specific Design*/
 
+}/* End of Main Design */
+
+/* Footer Design */
 footer {
     background-color: rgba(0, 0, 0, 0.8);
     grid-column-start: 1;
     grid-column-end: 13;
 
     /* Nested Grid */
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    justify-items: center;
-
+    section {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        justify-items: center;
+    }
 
     article:nth-of-type(1) {
         width: 100%;
@@ -296,4 +326,4 @@ footer {
         color: white;
         text-transform: capitalize;
     }
-}
+}/* End of Footer Design */

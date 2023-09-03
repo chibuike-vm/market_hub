@@ -1,22 +1,25 @@
-/* dashboard.html */
-.dashboard_body {
+/* Dashboard (dashboard.html) Design */
+.dashboard_container {
     section {
         grid-column-start: 1;
         grid-column-end: span 4;
-        padding: 0.4rem;
+        grid-row-start: span 1;
+        padding-left: 0.5rem;
     }
 
     aside {
         grid-column-start: 1;
         grid-column-end: span 4;
+        grid-row-start: span 2;
     }
 
     main {
         grid-column-start: 5;
         grid-column-end: span 8;
-        grid-row-end: span 2;
-        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-row-start: 1;
     }
+
     main article {
         grid-column-start: span 6;
     }

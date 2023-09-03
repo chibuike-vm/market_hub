@@ -12,18 +12,8 @@ main {
     }
 }
 
-/* dashboard.html */
-.dashboard_body {
-    section {
-        grid-column-start: span 5;
-        padding: 0.4rem;
-    }
-
-    aside {
-        grid-column-start: span 7;
-    }
-
-
+/* Dashboard (dashboard.html) Design */
+.dashboard_container {
     main article {
         grid-column-start: span 4;
     }

@@ -8,7 +8,7 @@
   @import "_partials/small.scss";
 }
 
-/* dashboard.html specific */
+/* Dashboard (dashboard.html) Specific */
 @media only screen and (width >= 540px) {
   @import "_partials/medium_dashboard.scss";
 } 
@@ -21,7 +21,7 @@
   @import "_partials/large.scss";
 }
 
-/* dashboard.html specific (for larger screen sizes) */
+/* Dashboard (dashboard.html) Specific */
 @media only screen and (width >= 1440px) {
   @import "_partials/_large_dashboard.scss";
 }
