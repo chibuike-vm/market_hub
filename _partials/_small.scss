@@ -1,0 +1,27 @@
+main {
+    justify-self: center;
+    width: 90%;
+}
+
+aside {
+    justify-self: center;
+}
+
+.footer {
+    justify-items: center;
+
+    .to_top {
+      hr {
+        border-width: 0.2rem;
+      }
+    }
+
+    .art {
+        grid-column-start: span 6;
+        padding: 0.4rem;
+    }
+
+    article:nth-of-type(10) {
+        grid-column-start: span 12;
+    }
+}

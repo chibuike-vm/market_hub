@@ -1,0 +1,35 @@
+main {
+    width: 90%;
+}
+
+.footer {
+    .art {
+        grid-column-start: span 3;
+    }
+
+    article:nth-of-type(10) {
+        grid-column-start: span 12;
+    }
+}
+
+/* dashboard.html */
+.dashboard_body {
+    section {
+        grid-column-start: span 5;
+        padding: 0.4rem;
+    }
+
+    section,
+    aside {
+        width: 95%;
+    }
+
+    aside {
+        grid-column-start: span 7;
+    }
+
+
+    main article {
+        grid-column-start: span 4;
+    }
+}

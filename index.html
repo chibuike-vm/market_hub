@@ -13,69 +13,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Freshenger || Home</title>
+    <title>Home | Freshenger</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <header >
-        <div class="header header_large" >
+<body class="index_body">
+    <header>
+        <div class="header" >
             <div class="header_large" id="header_large">
                 <ul class="header_ul">
                     <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                    <li><a href="./login.html#form_title"><h1>LOGIN</h1></a></li>
-                    <li><a href="./register.html#form_title"><h1>REGISTER</h1></a></li>
+                    <li><a href="./login.html"><h1>LOGIN</h1></a></li>
+                    <li><a href="./register.html"><h1>REGISTER</h1></a></li>
                     <li><a href=""><h1>FAQS</h1></a></li>
-                    <li><a href=""><svg id="svg_large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/>
-                    </svg></a></li>
+                    <li><img src="./svg/user.svg" alt="User SVG Image" class="svg"></li>
                 </ul>
             </div>
             <div class="top" id="top_div">
-                <div class="fresh">
-                    <h1>
-                        <a href="./index.html">FRESHENGER</a>
-                    </h1>
-                </div>
-                <div>
-                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="100%"  height="40px" viewBox="0 0 24 24" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </div>
+                <ul class="fresh">
+                    <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
+                    <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
+                </ul>
+                <ul class="harmbuger_items open" id="hamburger_ul">
+                    <li><a href="./register.html"><h1>REGISTER</h1></a></li>
+                    <li><a href="./login.html"><h1>LOGIN</h1></a></li>
+                    <li><a href="#"><h1>FAQS</h1></a></li>
+                    <li><img src="./svg/user.svg" alt="User SVG Image"></li>
+                </ul>
             </div>
         </div>
     </header>
 
-    <section class="form_container">
-        <main>
-            <img src="./media/hero_image.jpg" alt="hero image">
-            <article>
-                <p class="intro">
-                    This is Freshenger, the best market hub where you can shop for all your fresh foods. 
-                    We also offer affordable delivery services too. Our customers derivation of maximum 
-                    utility from our services remains our topmost priority.
-                </p>
-            </article>
-        </main>        
-    </section>
+    <main>
+        <img src="./media/hero_image.jpg" alt="hero image">
+        <article>
+            <p class="intro">
+                This is Freshenger, the best market hub where you can shop for all your fresh foods. 
+                We also offer affordable delivery services too. Our customers derivation of maximum 
+                utility from our services remains our topmost priority.
+            </p>
+        </article>
+    </main>        
 
-    <footer> 
-        <section id="footer">
-            <article class="to_top">
-                <p>Back To Top</p>
-                <hr>
-            </article>
-            <article class="inner_container" id="inner_container">
-                <section><p>customer support</p></section>
-                <section><p>contact us</p></section>
-                <section><p>report a product</p></section>
+    <footer class="footer" id="footer"> 
+        <article class="to_top">
+            <p>Back To Top</p>
+            <hr>
+        </article>
+        
+        <article class="art"><p>customer support</p></article>
+        <article class="art"><p>contact us</p></article>
+        <article class="art"><p>report a product</p></article>
 
-                <section><p>visit our blog</p></section>
-                <section><p>become an investor</p></section>
-                <section><p>privacy notice</p></section>
+        <article class="art"><p>visit our blog</p></article>
+        <article class="art"><p>become an investor</p></article>
+        <article class="art"><p>privacy notice</p></article>
 
-                <section><p>terms and conditions</p></section>
-                <section><p>apply to be a rider</p></section>
-                <section><p>bulk purchase services</p></section>
-            </article>
-        </section>
+        <article class="art"><p>terms and conditions</p></article>
+        <article class="art"><p>apply to be a rider</p></article>
+        <article class="art"><p>bulk purchase services</p></article>
     </footer>
 </body>
+<script src="index.js"></script>
 </html>

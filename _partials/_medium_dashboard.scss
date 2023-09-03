@@ -1,0 +1,22 @@
+/* dashboard.html */
+.dashboard_body {
+    section {
+        background-color: rgba(136, 128, 210, 0.5);
+        grid-column-start: span 5;
+        padding: 0.4rem;
+    }
+
+    section,
+    aside {
+        width: 95%;
+    }
+
+    aside {
+        grid-column-start: span 7;
+    }
+
+
+    main article {
+        grid-column-start: span 6;
+    }
+}

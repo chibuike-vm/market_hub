@@ -11,6 +11,8 @@ for (let i = 0; i < 6; i++) {
 let submitButton = document.getElementById("submitbutton");
 let loginButton = document.getElementById("login");
 let spanElement = document.getElementById("user_id");
+let hamburgerUl = document.getElementById("hamburger_ul");
+let hamburgerButton = document.getElementById("hamburger_button");
 let webPage = window.location.href;
 
 if (submitButton !== null)
@@ -37,7 +39,7 @@ if (submitButton !== null)
 		else
 		{
 			feedback.setAttribute("class", "feedback");
-		}
+		} 
 	});
 }
 
@@ -171,4 +173,11 @@ if (webPage.includes("dashboard"))
 	{
 		dashboardData.timeInsert.innerHTML = `Good Evening <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
 	}
+}
+
+if (hamburgerButton !== null)
+{
+	hamburgerButton.addEventListener("click", function() {
+		hamburgerUl.classList.toggle("open");
+	});
 }

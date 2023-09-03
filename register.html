@@ -11,105 +11,102 @@
     gtag('config', 'G-ZGYQSZPEQ3');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=header, initial-scale=1.0, maximum-scale=1.0">
-    <title>Freshenger || Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Register | Freshenger</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header >
-        <div class="header header_large" >
+    <header>
+        <div class="header" >
             <div class="header_large" id="header_large">
                 <ul class="header_ul">
-                    <li><a href=""><h1>FRESHENGER</h1></a></li>
-                    <li><a href=""><h1>LOGIN</h1></a></li>
-                    <li><a href=""><h1>REGISTER</h1></a></li>
+                    <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
+                    <li><a href="./login.html"><h1>LOGIN</h1></a></li>
+                    <li><a href="./register.html"><h1>REGISTER</h1></a></li>
                     <li><a href=""><h1>FAQS</h1></a></li>
-                    <li><a href=""><svg id="svg_large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/>
-                    </svg></a></li>
+                    <li><img src="./svg/user.svg" alt="User SVG Image" class="svg"></li>
                 </ul>
             </div>
             <div class="top" id="top_div">
-                <div class="fresh">
-                    <h1>
-                        <a href="./register.html">FRESHENGER</a>
-                    </h1>
-                </div>
-                <div>
-                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="100%"  height="40px" viewBox="0 0 24 24" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </div>
+                <ul class="fresh">
+                    <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
+                    <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
+                </ul>
+                <ul class="harmbuger_items open" id="hamburger_ul">
+                    <li><a href="./register.html"><h1>REGISTER</h1></a></li>
+                    <li><a href="./login.html"><h1>LOGIN</h1></a></li>
+                    <li><a href="#"><h1>FAQS</h1></a></li>
+                    <li><img src="./svg/user.svg" alt="User SVG Image"></li>
+                </ul>
             </div>
         </div>
     </header>
+    
+    <aside>
+        <!--  <img src="./media/hero_image.jpg" alt="hero image"> -->
+        <p class="login_intro">
+            Freshenger will continue to abide by the standard regulatory practices 
+            and procedures in discharging her duties and ensuring that our esteemed 
+            customers enjoy maximum utility from our services. Be rest assurred that 
+            Freshenger will bring you that desired comfort, quality and luxury to your
+            doorstep.
+        </p>
+   </aside>
+    <main>
+        <h1 class="form_title" id="form_title">
+            CREATE YOUR ACCOUNT
+        </h1>
 
-    <section class="form_container">
-        <main>
-           <!--  <img src="./media/hero_image.jpg" alt="hero image"> -->
-           <p class="login_intro">
-                Freshenger will continue to abide by the standard regulatory practices 
-                and procedures in discharging her duties and ensuring that our esteemed 
-                customers enjoy maximum utility from our services. Be rest assurred that 
-                Freshenger will bring you that desired comfort, quality and luxury to your
-                doorstep.
-            </p>
-            <h1 class="form_title" id="form_title">
-                CREATE YOUR ACCOUNT
-            </h1>
+        <form action="./login.html" method="get" enctype="application/x-www-form-urlencoded">
+            <fieldset>
+                <legend>Private Info</legend>
+                <label for="fname">FULL NAME</label>
+                <input type="text" name="fullname" id="fname" class="inputs" required><br><br>
 
-            <form action="./login.html" method="get" enctype="application/x-www-form-urlencoded">
-                <fieldset>
-                    <legend>Private Info</legend>
-                    <label for="fname">FULL NAME</label>
-                    <input type="text" name="fullname" id="fname" class="inputs" required><br><br>
+                <label for="uname">USER NAME</label>
+                <input type="text" name="username" id="uname" class="inputs" required><br><br>
 
-                    <label for="uname">USER NAME</label>
-                    <input type="text" name="username" id="uname" class="inputs" required><br><br>
+                <label for="pwrd">PASSWORD</label>
+                <input type="password" name="pword" id="pwrd" class="inputs" required><br><br>
 
-                    <label for="pwrd">PASSWORD</label>
-                    <input type="password" name="pword" id="pwrd" class="inputs" required><br><br>
+                <label for="pwrd">CONFIRM PASSWORD</label>
+                <input type="password" name="confirm_pword" id="conf_pwrd" class="inputs" required><br><br>
+            </fieldset>
 
-                    <label for="pwrd">CONFIRM PASSWORD</label>
-                    <input type="password" name="confirm_pword" id="conf_pwrd" class="inputs" required><br><br>
-                </fieldset>
+            <fieldset>
+                <legend>Contact Info</legend>  
+                <label for="pnumber">PHONE NUMBER</label>
+                <input type="tel" name="phone_number" id="pnumber" class="inputs" required><br><br>
+                
+                <label for="e_addr">EMAIL ADDRESS</label>
+                <input type="email" name="email_address" id="e_addr" class="inputs" required><br><br>
+            </fieldset><br>
 
-                <fieldset>
-                    <legend>Contact Info</legend>  
-                    <label for="pnumber">PHONE NUMBER</label>
-                    <input type="tel" name="phone_number" id="pnumber" class="inputs" required><br><br>
-                    
-                    <label for="e_addr">EMAIL ADDRESS</label>
-                    <input type="email" name="email_address" id="e_addr" class="inputs" required><br><br>
-                </fieldset><br>
+            <input type="checkbox" id="id_status" required>
+            <label for="id_status" class="checkbox_label">I agree to the company's terms and conditions.</label><br><br>
 
-                <input type="checkbox" id="id_status" required>
-                <label for="id_status" class="checkbox_label">I agree to accept the company's terms and conditions.</label><br><br>
+            <p id="feedback"></p>
+            <input type="submit" value="Register" id="submitbutton" class="inputs">
+        </form>
+    </main>
 
-                <p id="feedback"></p>
-                <input type="submit" value="Register" id="submitbutton" class="inputs">
-            </form>
-        </main>
-    </section>
+    <footer class="footer" id="footer"> 
+        <article class="to_top">
+            <p>Back To Top</p>
+            <hr>
+        </article>
+        
+        <article class="art"><p>customer support</p></article>
+        <article class="art"><p>contact us</p></article>
+        <article class="art"><p>report a product</p></article>
 
-    <footer> 
-        <section id="footer">
-            <article class="to_top">
-                <p>Back To Top</p>
-                <hr>
-            </article>
-            <article class="inner_container" id="inner_container">
-                <section><p>customer support</p></section>
-                <section><p>contact us</p></section>
-                <section><p>report a product</p></section>
+        <article class="art"><p>visit our blog</p></article>
+        <article class="art"><p>become an investor</p></article>
+        <article class="art"><p>privacy notice</p></article>
 
-                <section><p>visit our blog</p></section>
-                <section><p>become an investor</p></section>
-                <section><p>privacy notice</p></section>
-
-                <section><p>terms and conditions</p></section>
-                <section><p>apply to be a rider</p></section>
-                <section><p>bulk purchase services</p></section>
-            </article>
-        </section>
+        <article class="art"><p>terms and conditions</p></article>
+        <article class="art"><p>apply to be a rider</p></article>
+        <article class="art"><p>bulk purchase services</p></article>
     </footer>
 </body>
 <script src="./index.js"></script>
