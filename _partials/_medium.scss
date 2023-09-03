@@ -17,7 +17,7 @@ main {
 
     /* Nested Grid */
     .header_ul {
-        padding-left: 0.2rem;
+        padding-left: 0;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         align-items: center;

@@ -58,7 +58,7 @@ header {
 
     /* Nested Grid */
     .fresh {
-        padding-left: 0.8rem;
+        padding-left: 0;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         align-items: center;
@@ -68,6 +68,7 @@ header {
         grid-column-start: 1;
         grid-column-end: 11;
         list-style-type: none;
+        padding-left: 0.8rem;
     }
 
     h1,
@@ -141,6 +142,7 @@ header {
             border-radius: 1rem;
             font-size: 1.5rem;
             text-align: center;
+            padding: 0.5rem 0.5rem;
         }
 
         hr {
@@ -224,6 +226,7 @@ aside {
 
     p {
         font-size: 1.5rem;
+        padding: 0 2rem;
     }
 }
 
