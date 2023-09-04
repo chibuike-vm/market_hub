@@ -22,16 +22,22 @@ body {
 body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: min-content auto max-content;
+    grid-template-rows: repeat(2, min-content) auto max-content;
     grid-row-gap: 1rem;
     margin-top: 0;
+
+    /* Index (index.html) and Register (register.html) Design */
+    .center_main {
+        align-self: center;
+    }
 }
 
 /* Index (index.html) Design */
 .index_body {
     background-color: rgba(200, 252, 191, 0.5);
-    grid-row-gap: 0;
-
+    grid-template-rows: min-content auto max-content;
+    row-gap: 0;
+    
     main img {
         width: 100%;
         height: auto;
@@ -68,7 +74,7 @@ header {
     img {
         cursor: pointer;
         width: 100%;
-        height: 2.7rem;
+        height: 2.8rem;
     }
 
     .header_large {
@@ -146,6 +152,10 @@ header {
 /* End of Header Design */
 
 /* Dashboard (dashboard.html) Design */
+.dashboard_body {
+    grid-template-rows: min-content auto max-content;
+}
+
 .dashboard_container {
     grid-column-start: 1;
     grid-column-end: 13;

@@ -21,9 +21,10 @@ aside {
         padding: 0.4rem;
     }
 
-    article:nth-of-type(10) {
+    .last {
         grid-column-start: span 12;
-    }
+        text-align: center;
+    } 
 }
 
 /* Dashboard (dashboard.html) Design */
