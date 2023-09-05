@@ -71,6 +71,10 @@ header {
     grid-column-start: 1;
     grid-column-end: 13;
 
+    .wayfinding {
+        background-color:  rgba(200, 252, 191, 0.5);
+    }
+
     img {
         cursor: pointer;
         width: 100%;
@@ -113,7 +117,7 @@ header {
 
     /* Hamburger Button Menu Design */
     .harmbuger_items {
-        background-color: rgba(32, 21, 4, 0.5);
+        background-color: rgba(98, 84, 3, 0.5);
         padding-left: 0;
         padding: 0.2rem;
         display: grid;
@@ -131,7 +135,7 @@ header {
         }
 
         li:hover {
-            background-color:  rgba(10, 77, 79, 0.5);
+            background-color:  rgba(0, 0, 0, 0.5);
         }
 
         h1 {
@@ -253,6 +257,11 @@ header {
     }
 }
 /* End of Dashboard (dashboard.html) Design */
+
+/* Mainly for small screen sizes */
+.main {
+    margin-bottom: 2rem;
+}
 
 /* Aside Design */
 aside {
