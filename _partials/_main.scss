@@ -34,7 +34,7 @@ body {
 
 /* Index (index.html) Design */
 .index_body {
-    background-color: rgba(200, 252, 191, 0.5);
+    background-color: $indexBodyBackgroundColor;
     grid-template-rows: min-content auto max-content;
     row-gap: 0;
     
@@ -57,7 +57,7 @@ body {
 
 /* Header Design */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $headerAndFooterBackgroundColor;
     grid-column-start: 1;
     grid-column-end: 13;
 
@@ -72,7 +72,7 @@ header {
     grid-column-end: 13;
 
     .wayfinding {
-        background-color:  rgba(200, 252, 191, 0.5);
+        background-color: $indexBodyBackgroundColor;
     }
 
     img {
@@ -116,8 +116,8 @@ header {
     }
 
     /* Hamburger Button Menu Design */
-    .harmbuger_items {
-        background-color: rgba(98, 84, 3, 0.5);
+    .hamburger_items {
+        background-color: $hamburgerItemsBackgroundColor;
         padding-left: 0;
         padding: 0.2rem;
         display: grid;
@@ -135,7 +135,7 @@ header {
         }
 
         li:hover {
-            background-color:  rgba(0, 0, 0, 0.5);
+            background-color: $hamburgerItemsHoverColor;
         }
 
         h1 {
@@ -320,7 +320,7 @@ main {
 
 /* Footer Design */
 footer {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $headerAndFooterBackgroundColor;
     grid-column-start: 1;
     grid-column-end: 13;
 

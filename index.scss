@@ -1,27 +1,29 @@
 @use "sass:math";
 
-@import "_partials/normalize.scss";
+@import "_partials/normalize";
 
-@import "_partials/main.scss";
+@import "_partials/variables";
+
+@import "_partials/main";
 
 @media only screen and (width >= 412px) {
-  @import "_partials/small.scss";
+  @import "_partials/small";
 }
 
 /* Dashboard (dashboard.html) Specific */
 @media only screen and (width >= 540px) {
-  @import "_partials/medium_dashboard.scss";
+  @import "_partials/medium_dashboard";
 } 
 
 @media only screen and (width > 768px) {
-  @import "_partials/medium.scss";
+  @import "_partials/medium";
 } 
 
 @media only screen and (width >= 912px) {
-  @import "_partials/large.scss";
+  @import "_partials/large";
 }
 
 /* Dashboard (dashboard.html) Specific */
 @media only screen and (width >= 1440px) {
-  @import "_partials/_large_dashboard.scss";
+  @import "_partials/_large_dashboard";
 }
