@@ -1,0 +1,23 @@
+footer {
+    section {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+    }
+
+    article:nth-child(1) {
+        width: 100%;
+    }
+}
+
+.dashboard_container {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+        article {
+            width: 45%;
+        }
+    }
+}

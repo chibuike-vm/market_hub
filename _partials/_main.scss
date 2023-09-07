@@ -1,299 +1,275 @@
- * {
+/* To fix text adjust issues in portrait and landscape mode across browsers */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* To fix box-sizing issues across browsers */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-    max-width: 1920px;
+html,
+body {
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-    body {
-        width: 100%;
-        margin: 0 auto;
+/* Keeping all containers at max-width of 1920px */
+.header_container,
+.main,
+.aside,
+.dashboard_container,
+.footer {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    header,
+    aside,
+    footer {
+        flex-basis: auto;
+    }
+
+    main {
+        flex-basis: auto;
+        flex-grow: 2;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+
+    aside {
+       padding: 1rem;
+       font-size: 1.5rem;
+    }
+}
+
+.index_body {
+    main {
+        justify-content: flex-start;
+        padding: 0.2rem;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        p {
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
     }
 }
 
 header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $headerAndFooterBackgroundColor;
 
-    .header {
-        width: 90%;
-        margin: 0 auto;
+    .header_large {
+        display: none;
+    }
+
+    .toggle {
+        padding: 1rem;
+        display: none;
+    }
+
+    .fresh {
+        margin-top: 0;
+        margin-bottom: 0;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
 
-        .header_large {
-            display: none;
-        }
 
-        .top,
-        .header_large {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: center;
+        li:nth-child(1) {
+            flex-basis: 80%;
         }
-      
-        a {
-            text-decoration: none;
-            color: #ffffff;
+        
+        li:nth-child(2) {
+            flex-basis: 20%;
+            margin-left: auto;
         }
 
         h1 {
             font-size: 1.5rem;
-            color: #ffffff;
-            flex-basis: 100%;
-        }
-
-        .header_large {
-            display: none;
         }
     }
 
-    h2 {
-        color: #ffffff;
-        text-align: center;
-        font-size: 1.4rem;
-    }  
-
-    span {
-        text-transform: capitalize;
-    }
-}
-
-.top .fresh {
-    flex-grow: 2;
-}
- 
-img {
-    display: block;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-p {
-    font-size: 1.4rem;
-
-    button {
-        width: 100%;
-        font-size: 1.4rem;
-        padding: 0.2rem 0 0.2rem 0;
-    }
-}
-
-.display_section {
-    width: 100%;
-    margin-top: 0;
-
-    ul li {
-        font-size: 1.4rem;
-        text-transform: capitalize;
-    }
-}
-
-.hide {
-    display: none;
-}
-
-#article_display {
-    label {
-        font-weight: 500;
-        font-size: 1.4rem;
+    a {
+        text-decoration: none;
+        color: white;
     }
 
-    input {
-        width: 100%;
-        padding: 0.2rem 0 0.2rem 0;
-        font-size: 1.4rem;
-    }
-}
-
-.container {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .direct_container_child {
-        padding: 1rem 1rem;
-    }
-
-    aside {
-        flex: auto;
-        padding: 1rem 1rem;
-
-        h2 {
-            font-size: 1.4rem;
-        }
-    }
-
-    main {
-        flex: auto;
-        padding: 1rem 1rem;
-    }
-}
-
-.main_secs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    article {
-        border: 0.2rem ridge rgb(11, 142, 50);
-        padding: 0.5rem;
-        margin: 0.2rem;
-        flex: auto;
+    li {
+        list-style-type: none;
     }
 
     img {
-        width: 10rem;
-        height: 10rem;
         display: block;
+        margin-left: auto;
     }
-    
-    h3,
-    p {
+
+    .hamburger_items {
+        background-color: $hamburgerItemsBackgroundColor;
         text-align: center;
-        font-size: 1.4rem;
-    } 
-}
+        padding: 0.2rem;
 
+        li:nth-child(4) img {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-ol li {
-    font-size: 1.4rem;
-    line-height: 3;
-
-    button {
-        width: 100%;
-        font-size: 1.4rem;
-        padding: 0.2rem 0;
+        h1 {
+            font-size: 1.6rem;
+        }
     }
 }
 
-.time_display {
-    border: 0.2rem ridge rgb(3, 26, 3);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-radius: 1.5rem;
-
-    p {
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin: 0 0;
-    }
-
-    span {
-        text-transform: capitalize;
-    }
-
-    hr {
-        border: 0.1rem ridge rgb(14, 40, 14);
-    }
-}
-
-footer {
-    width: 100%;
-    background-color: rgb(0, 0, 0, 0.8); 
-} 
-
-#footer {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+main {
     display: flex;
     flex-direction: column;
-    color: white;
-}
+    justify-content: center;
+    width: 100%;
+    
 
-.to_top {
-    text-align: center;
+    input { 
+        width: 100%;
+    }
 
-    p {
-        font-size: 1.4rem;
+    input[type=checkbox] {
+        width: 10%;
+        height: 1.3rem;
+    }
+
+    p,
+    label,
+    legend,
+    input {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h1,
+    form {
+        width: 80%;
+        align-self: center;
     }
 }
 
-article.inner_container {
+
+.dashboard_container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
-section p {
-    //text-align: center;
-    font-size: 1.4rem;
-    text-transform: capitalize;
-    padding: 0.2rem;
+    main {
+        background-color: cyan;
+        padding: 0.2rem;
+
+        article {
+            margin: 0.8rem;
+            border: 0.2rem ridge rgba(0, 0, 0, 0.5);
+            width: 90%;
+            //align-self: center;
+        }
+
+        article:nth-child(even) {
+            background-color: rgba(156, 209, 32, 0.5);
+        }
+
+        article:nth-child(odd) {
+            background-color: rgba(48, 41, 33, 0.5);
+        }
+    }
+
+    aside {
+        background-color: rgba(0, 0, 255, 0.5);
+        width: 100%;
+
+        article {
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        input[type=button],
+        p {
+            margin-top: 1rem;
+        }
+    }
+
+    section {
+        background-color: rgb(255, 0, 0, 0.5);
+        width: 100%;
+        padding: 1rem;
+    }
+
+    main,
+    .time_display,
+    aside {
+        margin-top: 1rem;
+    }
+
+    h3,
+    h2, 
+    p {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    img {
+        width: 100%;
+        height: 20rem;
+    }
+
+    ol {
+       li {
+        font-size: 1.6rem;
+        line-height: 3;
+       } 
+    }
+
+    input,
+    button {
+        width: 100%;
+    }
+
+    .hide {
+        display: none;
+    }
 } 
 
-/* index */
-.intro {
-    text-transform: none;
-}
+footer {
+    background-color: $headerAndFooterBackgroundColor;
+    color: white;
+    text-align: center;
 
-/* Register/Login Form */
-.form_container {
-    width: 86%;
-    margin-left: auto;
-    margin-right: auto;
-
-    form {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
+    p {
+        font-size: 1.8rem;
+        text-transform: capitalize;
     }
 
-    .form_title {
-        margin-top: 10rem;
-        text-align: center;
+    section {
+        display: flex;
+        flex-direction: column;    
     }
 
-    .login_intro {
-        text-align: justify;
-        text-transform: none;
-    }
-
-    label,
-    legend {
-        font-weight: 500;
-        font-size: 1.3rem;
-    }
-
-    #submitbutton,
-    #login {
-        display: block;
-        padding: 0.3rem 0 0.3rem 0rem;
-        font-size: 1.2rem;
-        margin-bottom: 10rem;
-    }
-
-    #feedback {
-        margin-top: 0;
-        font-size: 1.3rem;
-    }
-
-    .checkbox_label {
-        font-size: 1.3rem;
-    }
-
-    .inputs {
-        font-size: 1.5rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    #id_status {
-    width: 1.1rem;
-    height: 1.1rem;
-    }
-
-    .feedback {
-        display: none;
+    article {
+        margin: 2rem;
     }
 }
