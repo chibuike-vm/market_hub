@@ -4,20 +4,20 @@
 
 @import "_partials/variables";
 
-@import "_partials/main";
+@import "_partials/dashboard";
 
 @media only screen and (width >= 320px) {
-  @import "_partials/small";
+    @import "_partials/dash_small";
 }
-
+  
 @media only screen and (width >= 540px) {
-  @import "_partials/_pre-medium";
+    @import "_partials/dash_pre-medium";
 }
-
+  
 @media only screen and (width >= 768px) {
-  @import "_partials/_medium";
+    @import "_partials/dash_medium";
 }
 
 @media only screen and (width >= 820px) { 
-  @import "_partials/dash_large";
+   @import "_partials/dash_large";
 }

@@ -1,0 +1,30 @@
+#top_div {
+    display: none;
+}
+
+#header_large {
+    display: block;
+
+    ul {
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    li {
+        flex: auto;
+    }
+
+    h1 {
+        text-align: right;
+    }
+
+    li:nth-child(1) {
+        flex-grow: 2;
+
+        h1 {
+            text-align: left; 
+        }         
+    }
+}

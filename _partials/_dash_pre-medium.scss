@@ -1,0 +1,18 @@
+#main {
+    width: 90%;
+
+    img {
+        width: 20rem;
+        height: 18rem;
+    }
+}
+
+.footer {
+    .art {
+        flex-basis: 50%;
+    }
+
+    article:nth-child(10) {
+        flex-grow: 2;
+    }
+}

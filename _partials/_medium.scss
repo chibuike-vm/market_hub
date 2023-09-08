@@ -1,23 +1,17 @@
-footer {
-    section {
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-evenly;
-    }
-
-    article:nth-child(1) {
-        width: 100%;
-    }
-}
-
-.dashboard_container {
+/* .dashboard_container {
     main {
         flex-direction: row;
         flex-wrap: wrap;
 
 
         article {
-            width: 45%;
+            flex-basis: 25%;
         }
+    }
+}   */
+
+.footer {
+    .art {
+        flex: auto;
     }
 }

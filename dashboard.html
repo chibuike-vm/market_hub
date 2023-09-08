@@ -14,9 +14,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Dashboard | Freshenger</title>
-    <link rel="stylesheet" href="index.min.css">
+    <link rel="stylesheet" href="dash.min.css">
 </head>
-<body class="dashboard_body">
+<body>
     <header>
         <section class="header_container">
             <div class="header" >
@@ -45,45 +45,51 @@
         </section>
     </header>
  
-    <div class="dashboard_container">   
-        <section class="time_display">
-            <p id="time_insert">
-            </p>
-        </section>
-
-        <aside id="aside">
-            <article>
-                <h2>TASKS TO DO</h2>
-                <ol>
-                    <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
-                    <li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button>
-                </ol>
-            </article>
-
-            <article>
-                <p id="feed_back_msg"></p>
-            </article>
-
-            <article class="display_section">
-                <ul id="display_msg"></ul>
-            </article>
-
-            <article>
-                <p>
-                    You want to change your username? We've got you covered, just click the button below.<br><br>
-                    <button id="button_id">Change Your Username</button>
+    <div class="dashboard_container">
+        <article class="section_and_aside"> 
+            <section class="time_display">
+                <p id="time_insert">
                 </p>
-            </article>
+                <hr>
+                <p>
+                    Dear <span id="user_id"></span>, welcome to your dashboard!
+                </p>
+            </section>
 
-            <article id="article_display" class="hide">
-                <label for="username_id">Enter the New Username</label>
-                <input type="text" name="username" id="username_id" required>
+            <aside id="aside">
+                <article>
+                    <h2>TASKS TO DO</h2>
+                    <ol>
+                        <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
+                        <li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button>
+                    </ol>
+                </article>
 
-                <p id="return_info"></p>
+                <article>
+                    <p id="feed_back_msg"></p>
+                </article>
 
-                <input type="button" value="Submit" id="submit_id">
-            </article>
-        </aside>
+                <article class="display_section">
+                    <ul id="display_msg"></ul>
+                </article>
+
+                <article>
+                    <p>
+                        You want to change your username? We've got you covered, just click the button below.<br><br>
+                        <button id="button_id">Change Your Username</button>
+                    </p>
+                </article>
+
+                <article id="article_display" class="hide">
+                    <label for="username_id">Enter the New Username</label>
+                    <input type="text" name="username" id="username_id" required>
+
+                    <p id="return_info"></p>
+
+                    <input type="button" value="Submit" id="submit_id">
+                </article>
+            </aside>
+        </article>  
 
         <main id="main">
             <article>

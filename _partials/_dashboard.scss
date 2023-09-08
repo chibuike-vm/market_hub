@@ -12,6 +12,12 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 12 Column SASS Loop Percentage Layout */
+//@for $i from 1 through 12 {
+//    $w:($i/12) * 100%;
+//    .col-#{$i} {flex-basis: $w;}
+//}
+
 html,
 body {
     height: 100%;
@@ -23,8 +29,6 @@ body {
 
 /* Keeping all containers at max-width of 1920px */
 .header_container,
-.main,
-.aside,
 .dashboard_container,
 .footer {
     max-width: 1500px;
@@ -33,46 +37,12 @@ body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-
-    header,
-    aside,
-    footer {
-        flex-basis: auto;
-    }
-
-    main {
-        flex-basis: auto;
-        flex-grow: 2;
-        margin-bottom: 3rem;
-        padding: 1rem;
-    }
-
-    aside {
-       padding: 1rem;
-       font-size: 1.5rem;
-    }
-}
-
-.index_body {
-    main {
-        justify-content: flex-start;
-        padding: 0.2rem;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        p {
-            padding: 1rem;
-            font-size: 1.5rem;
-        }
-    }
+  display: flex;
+  flex-direction: column;
 }
 
 header {
+    flex-basis: auto;
     background-color: $headerAndFooterBackgroundColor;
 
     .header_large {
@@ -137,41 +107,111 @@ header {
     }
 }
 
-main {
+.dashboard_container {
+    flex-grow: 2;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    
+    align-items: center;
 
-    input { 
+    main,
+    .time_display,
+    aside {
+        margin-top: 1rem;
+    }
+
+    h3,
+    h2, 
+    p {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    img {
+        width: 15rem;
+        height: 13rem;
+    }
+
+    ol {
+       li {
+        font-size: 1.6rem;
+        line-height: 3;
+       } 
+    }
+
+    input,
+    button {
         width: 100%;
     }
 
-    input[type=checkbox] {
-        width: 10%;
-        height: 1.3rem;
+    .hide {
+        display: none;
+    }
+} 
+
+.section_and_aside {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    aside {
+        background-color: rgba(225, 188, 166, 0.5);
+        flex-basis: 100%;
+        padding: 0.6rem;
+
+        article {
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        ul li {
+            font-size: 1.8rem;
+            line-height: 2;
+        }
     }
 
-    p,
+    section {
+        background-color: rgba(190, 119, 156, 0.5);
+        padding: 0.6rem;
+        flex-basis: 100%;
+        border-radius: 1.5rem;
+    }
+
     label,
-    legend,
-    input {
-        font-size: 1.5rem;
+    input,
+    button,
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+main {
+    flex-grow: 2;
+   // background-color: cyan;
+    padding: 0.2rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    article {
+        margin: 0.8rem;
+        border: 0.2rem ridge rgba(0, 0, 0, 0.5);
     }
 
-    h1 {
-        text-align: center;
+    article:nth-child(even) {
+        background-color: rgba(156, 209, 32, 0.5);
     }
 
-    h1,
-    form {
-        width: 80%;
-        align-self: center;
+    article:nth-child(odd) {
+        background-color: rgba(3, 74, 167, 0.5);
     }
 }
 
 footer {
+    flex-basis: auto;
     background-color: $headerAndFooterBackgroundColor;
     color: white;
     text-align: center;

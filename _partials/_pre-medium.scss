@@ -1,0 +1,9 @@
+.footer {
+    .art {
+        flex-basis: 50%;
+    }
+
+    article:nth-child(10) {
+        flex-grow: 2;
+    }
+}

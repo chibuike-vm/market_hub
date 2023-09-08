@@ -1,0 +1,29 @@
+.section_and_aside {
+    flex-wrap: nowrap;
+
+    section {
+        flex-basis: 50%;
+        margin: 0.6rem;
+    }
+
+    aside {
+        flex-basis: 100%;
+        margin: 0.6rem;
+    }
+}
+
+#main {
+    width: 90%;
+    justify-content: space-evenly;
+
+    img {
+        width: 15rem;
+        height: 13rem;
+    }
+}
+
+.footer {
+    .art {
+        flex: auto;
+    }
+}
