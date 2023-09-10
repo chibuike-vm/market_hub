@@ -144,7 +144,7 @@ if (dashboardData.chngeYourUnameSubmitButton !== null)
 		else
 		{
 			dashboardData.returnSubmitMsg.textContent = "The input field can't be empty.";
-			dashboardData.returnSubmitMsg.scrollIntoView(true);
+			//dashboardData.returnSubmitMsg.scrollIntoView(true);
 		}
 		});
 }

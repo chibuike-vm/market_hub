@@ -37,6 +37,7 @@ body {
 }
 
 header {
+    margin-bottom: 1rem;
     background-color: $headerAndFooterBackgroundColor;
 
     .header_large {
@@ -46,6 +47,10 @@ header {
     .toggle {
         padding: 1rem;
         display: none;
+    }
+
+    .wayfinding {
+        background-color: rgb(209, 23, 23, 0.5);
     }
 
     .fresh {
@@ -81,13 +86,17 @@ header {
         text-align: center;
         padding: 0.2rem;
 
-        li:nth-child(4) img {
+        li:nth-child(5) img {
             margin-left: auto;
             margin-right: auto;
         }
 
         h1 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
+        }
+
+        li:hover {
+            background-color: rgba(0, 0, 0, 0.5);
         }
     }
 }
@@ -95,7 +104,6 @@ header {
 .dashboard_container {
     width: 100%;
 
-    main,
     .time_display,
     aside {
         margin-top: 1rem;
@@ -105,7 +113,7 @@ header {
     h2, 
     p {
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     img {
@@ -115,7 +123,7 @@ header {
 
     ol {
        li {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         line-height: 3;
        } 
     }
@@ -143,30 +151,29 @@ header {
         }
 
         ul li {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             line-height: 2;
+            color: rgb(86, 5, 47);
         }
     }
 
     section {
         background-color: rgba(190, 119, 156, 0.5);
         padding: 0.6rem;
-        border-radius: 1.5rem;
     }
 
     label,
     input,
-    button,
-    p {
-        font-size: 1.8rem;
+    button {
+        font-size: 1.3rem;
     }
 }
 
 main {
+    margin-top: 2rem;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    background-color: cyan;
     padding: 0.2rem;
 
     article {
@@ -187,12 +194,13 @@ main {
 }
 
 footer {
+    margin-top: 4rem;
     background-color: $headerAndFooterBackgroundColor;
     color: white;
     text-align: center;
 
     p {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         text-transform: capitalize;
     }
      
@@ -204,6 +212,7 @@ footer {
         width: 100%;
     }
 }
+
 
 /* Float Layout Design */
 .clearfix::after {

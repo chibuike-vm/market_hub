@@ -1,0 +1,80 @@
+html {
+    background-color: $generalBackgroundColor;
+}
+
+header {
+    box-shadow: 0 0.1rem 0.3rem;
+}
+
+.dashboard_container {
+    .section_and_aside {
+        section {
+            border-radius: 2rem 5rem / 2rem 3rem;
+            box-shadow: 0 0.1rem 0.2rem;
+        }
+
+        hr {
+            box-shadow: 0 0 0.3rem 0.2rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        } 
+
+        aside {
+            border-radius: 0.4rem 0.8rem;
+            box-shadow: 0 0.1rem 0.2rem;
+        }
+
+        input,
+        button {
+            box-shadow: 0 0 0.2rem;
+            border-radius: 0.2rem 0.4rem;
+        }
+    }
+
+    main {
+        article {
+            border-radius: 0 1rem 3rem;
+            box-shadow: 0 0.4rem 0.4rem;
+        }
+    }
+}
+
+main {
+    form {
+        box-shadow: 0 0 0.7rem;
+        padding: 2rem 1rem;
+        border-radius: 0 1.5rem;
+    }
+
+    fieldset:nth-child(2) {
+        margin-bottom: 1rem;
+    }
+
+    input[type="submit"] {
+        background-color: #f21499;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    legend {
+        background-color: rgb(67, 43, 2);
+        border-radius: 0.1rem 0.4rem;
+        color: white;
+        padding: 0.1rem;
+    }
+
+    input {
+        box-shadow: 0 0 0.2rem;
+        border-radius: 0.1rem 0.4rem;
+    }
+
+    input[type="checkbox"] {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+
+footer {
+    box-shadow: 0 -0.1rem 0.3rem rgb(0, 0, 0, 0.5);
+}
