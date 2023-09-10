@@ -11,6 +11,9 @@ for (let i = 0; i < 6; i++) {
 let submitButton = document.getElementById("submitbutton");
 let loginButton = document.getElementById("login");
 let spanElement = document.getElementById("user_id");
+let hamburgerUl = document.getElementById("hamburger_ul");
+let hamburgerButton = document.getElementById("hamburger_button");
+let webPage = window.location.href;
 
 if (submitButton !== null)
 {
@@ -19,9 +22,12 @@ if (submitButton !== null)
 		let formInputs = document.querySelectorAll("input");
 		let feedback = document.getElementById("feedback");
 
-		for (let i = 0; i < 6; i++) 
+		for (let i = 0; i < queryArray.length; i++) 
 		{	
-			localStorage.setItem(queryArray[i], formInputs[i].value);
+			if (formInputs[i].validity.valueMissing === false)
+			{
+				localStorage.setItem(queryArray[i], formInputs[i].value);
+			}
 		}
 
 		if (formInputs[2].value !== formInputs[3].value) 
@@ -33,7 +39,7 @@ if (submitButton !== null)
 		else
 		{
 			feedback.setAttribute("class", "feedback");
-		}
+		} 
 	});
 }
 
@@ -60,16 +66,20 @@ if (loginButton !== null)
     });
 }
 
+function setUsername() {
+	let username = localStorage.getItem("username");
+	return username;
+}
+
 if (spanElement !== null)
 {
-	let username = localStorage.getItem("username");
-	spanElement.textContent = username;
+	spanElement.textContent = setUsername();
 }
 
 let objectData =
 {
-	vegetables: [{"name": "ugu", "amount": "$100"}, {"name": "green", "amount": "$200"}],
-	fruits: [{"name": "mango", "amount": "$200"}, {"name": "orange", "amount": "$400"}]
+	vegetables: [{name: "ugu", amount: "$100"}, {name: "green", amount: "$200"}],
+	fruits: [{name: "mango", amount: "$200"}, {name: "orange", amount: "$400"}]
 };
 
 let dashboardData =
@@ -82,7 +92,8 @@ let dashboardData =
 	chngeYourUnameArtDisplay: document.getElementById("article_display"),
 	chngeYourUnameInput: document.getElementById("username_id"),
 	chngeYourUnameSubmitButton: document.getElementById("submit_id"),
-	returnSubmitMsg: document.getElementById("return_info")
+	returnSubmitMsg: document.getElementById("return_info"),
+	timeInsert: document.getElementById("time_insert")
 }
 
 if (dashboardData.storeJSONButton !== null)
@@ -133,7 +144,40 @@ if (dashboardData.chngeYourUnameSubmitButton !== null)
 		else
 		{
 			dashboardData.returnSubmitMsg.textContent = "The input field can't be empty.";
-				dashboardData.returnSubmitMsg.scrollIntoView(true);
+			dashboardData.returnSubmitMsg.scrollIntoView(true);
 		}
 		});
+}
+
+if (webPage.includes("dashboard"))
+{
+	let timeObjectArg =
+	{
+		dateStyle: "short",
+		timeStyle: "short"
+	}
+
+	let DateAndTimeFormat = new Date();
+	let timeInHrs = DateAndTimeFormat.getHours();
+	let fDateAndTime = DateAndTimeFormat.toLocaleString("en-NG", timeObjectArg);
+	
+	if (timeInHrs >= 0 && timeInHrs < 12)
+	{
+		dashboardData.timeInsert.innerHTML = `Good Morning <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+	}
+	else if (timeInHrs >= 12 && timeInHrs < 16)
+	{
+		dashboardData.timeInsert.innerHTML = `Good Afternoon <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+	}
+	else if (timeInHrs >= 16 && timeInHrs <= 23)
+	{
+		dashboardData.timeInsert.innerHTML = `Good Evening <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+	}
+}
+
+if (hamburgerButton !== null)
+{
+	hamburgerButton.addEventListener("click", function() {
+		hamburgerUl.classList.toggle("toggle");
+	});
 }

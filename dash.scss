@@ -1,0 +1,19 @@
+@use "sass:math";
+
+@import "_partials/normalize";
+
+@import "_partials/variables";
+
+@import "_partials/dashboard";
+
+@media only screen and (width >= 320px) {
+    @import "_partials/small";
+}
+
+@media only screen and (width >= 540px) {
+    @import "_partials/_medium";
+}
+
+@media only screen and (width >= 850px) {
+    @import "_partials/_large";
+}

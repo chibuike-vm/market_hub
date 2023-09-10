@@ -1,0 +1,246 @@
+/* To fix text adjust issues in portrait and landscape mode across browsers */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* To fix box-sizing issues across browsers */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 12 Column SASS Loop Percentage Layout */
+//@for $i from 1 through 12 {
+//    $w:($i/12) * 100%;
+//    .col-#{$i} {flex-basis: $w;}
+//}
+
+html,
+body {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Keeping all containers at max-width of 1920px */
+.header_container,
+.dashboard_container,
+.footer {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: $headerAndFooterBackgroundColor;
+
+    .header_large {
+        display: none;
+    }
+
+    .toggle {
+        padding: 1rem;
+        display: none;
+    }
+
+    .fresh {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 1rem;
+
+        li:nth-child(2) {
+            margin-left: auto;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+    }
+
+    .hamburger_items {
+        background-color: $hamburgerItemsBackgroundColor;
+        text-align: center;
+        padding: 0.2rem;
+
+        li:nth-child(4) img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.dashboard_container {
+    width: 100%;
+
+    main,
+    .time_display,
+    aside {
+        margin-top: 1rem;
+    }
+
+    h3,
+    h2, 
+    p {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    img {
+        width: 100%;
+        height: 20rem;
+    }
+
+    ol {
+       li {
+        font-size: 1.6rem;
+        line-height: 3;
+       } 
+    }
+
+    input,
+    button {
+        width: 100%;
+    }
+
+    .hide {
+        display: none;
+    }
+} 
+
+.section_and_aside {
+    padding: 0.4rem;
+
+    aside {
+        background-color: rgba(225, 188, 166, 0.5);
+        padding: 0.6rem;
+
+        article {
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        ul li {
+            font-size: 1.8rem;
+            line-height: 2;
+        }
+    }
+
+    section {
+        background-color: rgba(190, 119, 156, 0.5);
+        padding: 0.6rem;
+        border-radius: 1.5rem;
+    }
+
+    label,
+    input,
+    button,
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+main {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: cyan;
+    padding: 0.2rem;
+
+    article {
+        width: 100%;
+        height: 30rem;
+        margin: 0.8rem 0;
+
+        border: 0.2rem ridge rgba(0, 0, 0, 0.5);
+    }
+
+    article:nth-child(even) {
+        background-color: rgba(156, 209, 32, 0.5);
+    }
+
+    article:nth-child(odd) {
+         background-color: rgba(3, 74, 167, 0.5);
+    }
+}
+
+footer {
+    background-color: $headerAndFooterBackgroundColor;
+    color: white;
+    text-align: center;
+
+    p {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+    }
+     
+    article {
+        padding: 0.8rem;
+    }
+
+    article:nth-of-type(1) {
+        width: 100%;
+    }
+}
+
+/* Float Layout Design */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header {
+    .fresh {
+        li {
+            float: left; 
+        }
+
+        li:nth-child(1) {
+            width: 80%;
+        }
+
+        li:nth-child(2) {
+            width: 20%;
+        }
+
+        img {
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+.footer {
+    article {
+        float: left;
+        width: 100%;
+    }
+}
+
+main {
+    article {
+        float: left;
+    }
+}
