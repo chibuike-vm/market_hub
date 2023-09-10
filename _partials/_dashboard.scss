@@ -86,7 +86,7 @@ header {
         text-align: center;
         padding: 0.2rem;
 
-        li:nth-child(5) img {
+        li img {
             margin-left: auto;
             margin-right: auto;
         }
@@ -97,6 +97,11 @@ header {
 
         li:hover {
             background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        li:nth-child(5),
+        li:nth-child(6) {
+            margin-bottom: 0.871rem;
         }
     }
 }

@@ -13,8 +13,12 @@ header {
             box-shadow: 0 0.1rem 0.2rem;
         }
 
+        span {
+            text-transform: capitalize;
+        }
+
         hr {
-            box-shadow: 0 0 0.3rem 0.2rem;
+            box-shadow: 0 0 0.2rem;
             margin-bottom: 1.5rem;
             margin-top: 1.5rem;
         } 
@@ -28,6 +32,13 @@ header {
         button {
             box-shadow: 0 0 0.2rem;
             border-radius: 0.2rem 0.4rem;
+        }
+
+        input[type="button"],
+        button {
+            background-color: #f21499;
+            color: white;
+            font-size: 1.5rem;
         }
     }
 
