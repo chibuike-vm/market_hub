@@ -14,15 +14,24 @@
         float: left;
     }
 
-
     li:nth-child(2),
     li:nth-child(4),
+    li:nth-child(5),
+    li:nth-child(6) {
+        width: 12.5%;
+    }
+
     li:nth-child(5) {
-        width: 15%;
+        padding-top: 1.8rem;
+
+        .toggle_switch {
+            display: block;
+            margin-left: auto;
+        }
     }
 
     li:nth-child(3) {
-        width: 25%;
+        width: 20%;
     }
 
     li:nth-child(1) {
@@ -62,27 +71,12 @@
     }
 }
 
-
 .dashboard_container {
     main {
         width: 100%;
     
         article{
-           width: 31.6%;
-        }
-    
-        article:nth-child(3),
-        article:nth-child(5) {
-            margin-left: 0.4rem;
-        }
-    
-        article:nth-child(2),
-        article:nth-child(4) {
-            margin-right: 0.4rem;
-        }
-    
-        article:nth-of-type(1) {
-            margin-left: 0.4rem;
+           width: 33.3333333%;
         }
     }
 
@@ -93,17 +87,12 @@
         }
     
         .time_display {
-            width: 34.62%;
-            margin-right: 1rem;
+            width: 40%;
             height: 20rem;
         }
     
         aside {
-            width: 63.47%;
-    
-            article {
-                margin-left: 0.4rem;
-            }
+            width: 60%;
         }
     }
 }

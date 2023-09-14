@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="demo">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGYQSZPEQ3"></script>
@@ -23,10 +23,16 @@
                 <div class="header_large" id="header_large">
                     <ul class="header_ul clearfix">
                         <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                        <li><a href="./login.html"><h1>ORDER</h1></a></li>
-                        <li><a href="./register.html"><h1>ORDER HISTORY</h1></a></li>
+                        <li><a href="./login.html"><h1>LOGIN</h1></a></li>
+                        <li><a href="./register.html"><h1>REGISTER</h1></a></li>
                         <li><a href=""><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg"></li>
+                        <li>
+                            <label class="toggle_switch">
+                                <input type="checkbox" id="checkme_large">
+                                <span id="span_id_large"></span>
+                            </label>
+                        </li>
+                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg" id="user_svg"></li>
                     </ul>
                 </div>
                 <div class="top" id="top_div">
@@ -35,12 +41,15 @@
                         <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
                     </ul>
                     <ul class="hamburger_items toggle" id="hamburger_ul">
-                        <li><a href="./dashboard.html"><h1>DASHBOARD</h1></a></li>
-                        <li><a href="#"><h1>ORDER</h1></a></li>
-                        <li><a href="#"><h1>ORDER HISTORY</h1></a></li>
-                        <li><a href="#"><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image"></li>
-                        <li><img src="./svg/lightmode.svg" alt="Lightmode SVG Image"></li>
+                        <li class="hamburger_list"><a href="./dashboard.html"><h1>DASHBOARD</h1></a></li>
+                        <li class="hamburger_list"><a href="#"><h1>ORDER</h1></a></li>
+                        <li class="hamburger_list"><a href="#"><h1>ORDER HISTORY</h1></a></li>
+                        <li class="hamburger_list"><a href="#"><h1>FAQS</h1></a></li>
+                        <li class="hamburger_list"><img src="./svg/user.svg" alt="User SVG Image"></li>
+                        <label class="toggle_switch">
+                            <input type="checkbox" id="checkme_mobile">
+                            <span id="span_id_mobile"></span>
+                        </label>
                     </ul>
                 </div>
             </div>
@@ -49,85 +58,98 @@
  
     <div class="dashboard_container">
         <article class="section_and_aside clearfix"> 
-            <section class="time_display">
-                <p id="time_insert">
-                </p>
-                <hr>
-                <p>
-                    Dear <span id="user_id"></span>, welcome to your dashboard!
-                </p>
+            <section class="time_display time_section">
+                <article class="time_article">
+                    <p id="time_insert"></p>
+                    <hr>
+                    <p>Dear <span id="user_id"></span>, welcome to your dashboard!</p>
+                </article>
             </section>
 
             <aside id="aside">
-                <article>
-                    <h2>TASKS TO DO</h2>
-                    <ol>
-                        <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
-                        <li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button>
-                    </ol>
-                </article>
+                <section class="aside_section">
+                    <article>
+                        <h2>TASKS TO DO</h2>
+                        <ol>
+                            <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
+                            <li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button>
+                        </ol>
+                    </article>
 
-                <article>
-                    <p id="feed_back_msg"></p>
-                </article>
+                    <article>
+                        <p id="feed_back_msg"></p>
+                    </article>
 
-                <article class="display_section">
-                    <ul id="display_msg"></ul>
-                </article>
+                    <article class="display_section">
+                        <ul id="display_msg"></ul>
+                    </article>
 
-                <article>
-                    <p>
-                        You want to change your username? We've got you covered, just click the button below.<br><br>
-                        <button id="button_id">Change Your Username</button>
-                    </p>
-                </article>
+                    <article>
+                        <p>
+                            You want to change your username? We've got you covered, just click the button below.<br><br>
+                            <button id="button_id">Change Your Username</button>
+                        </p>
+                    </article>
 
-                <article id="article_display" class="hide">
-                    <label for="username_id">Enter the New Username</label>
-                    <input type="text" name="username" id="username_id" required maxlength="12">
+                    <article id="article_display" class="hide">
+                        <label for="username_id">Enter the New Username</label>
+                        <input type="text" name="username" id="username_id" required maxlength="12">
 
-                    <p id="return_info"></p>
+                        <p id="return_info"></p>
 
-                    <input type="button" value="Submit" id="submit_id">
-                </article>
-            </aside>
+                        <input type="button" value="Submit" id="submit_id">
+                    </article>
+                </aside>
+            </section>
         </article>  
 
         <main id="main" class="clearfix">
             <article>
-                <img src="media/bitter_leaf.jpg" alt="Bitter Leaves Image">
-                <h3>Bitter Leaf</h3>
-                <p>Unit Price - #200</p>
+                <section>
+                    <img src="media/bitter_leaf.jpg" alt="Bitter Leaves Image">
+                    <h3>Bitter Leaf</h3>
+                    <p>Unit Price - #200</p>
+                </section>
             </article>
 
             <article>
-                <img src="media/green.jpg" alt="Green Leaves Image">
-                <h3>Green</h3>
-                <p>Unit Price - #200</p>
+                <section>
+                    <img src="media/green.jpg" alt="Green Leaves Image">
+                    <h3>Green</h3>
+                    <p>Unit Price - #200</p>
+                </section>
             </article>
 
             <article>
-                <img src="media/oha.jpg" alt="Oha Leaves Image">
-                <h3>Oha</h3>
-                <p>Unit Price - #300</p>
+                <section>
+                    <img src="media/oha.jpg" alt="Oha Leaves Image">
+                    <h3>Oha</h3>
+                    <p>Unit Price - #300</p>
+                </section>
             </article>
 
             <article>
-                <img src="media/ugu.jpg" alt="Ugu Leaves Image">
-                <h3>Ugu</h3>
-                <p>Unit Price - #200</p>
+                <section>
+                    <img src="media/ugu.jpg" alt="Ugu Leaves Image">
+                    <h3>Ugu</h3>
+                    <p>Unit Price - #200</p>
+                </section>
             </article>
 
             <article>
-                <img src="media/water_leaf.jpg" alt="Water Leaves Image">
-                <h3>Water Leaf</h3>
-                <p>Unit Price - #400</p>
+                <section>
+                    <img src="media/water_leaf.jpg" alt="Water Leaves Image">
+                    <h3>Water Leaf</h3>
+                    <p>Unit Price - #400</p>
+                </section>
             </article>
 
             <article>
-                <img src="media/okro.jpg" alt="Okro Leaves Image">
-                <h3>Okro</h3>
-                <p>Unit Price - #200</p>
+                <section>
+                    <img src="media/okro.jpg" alt="Okro Leaves Image">
+                    <h3>Okro</h3>
+                    <p>Unit Price - #200</p>
+                </section>
             </article>
         </main>
     </div>

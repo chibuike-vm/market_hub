@@ -6,9 +6,19 @@ header {
     box-shadow: 0 0.1rem 0.3rem;
 }
 
+.hamburger_list a:hover,
+.hamburger_list h1:hover,
+.hamburger_list:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 0 0.4rem white;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+}
+
 .dashboard_container {
     .section_and_aside {
-        section {
+        .time_article {
             border-radius: 2rem 5rem / 2rem 3rem;
             box-shadow: 0 0.1rem 0.2rem;
         }
@@ -19,11 +29,11 @@ header {
 
         hr {
             box-shadow: 0 0 0.2rem;
-            margin-bottom: 1.5rem;
-            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
         } 
-
-        aside {
+        
+        .aside_section {
             border-radius: 0.4rem 0.8rem;
             box-shadow: 0 0.1rem 0.2rem;
         }
@@ -43,9 +53,11 @@ header {
     }
 
     main {
-        article {
-            border-radius: 0 1rem 3rem;
-            box-shadow: 0 0.4rem 0.4rem;
+        article {    
+            section {
+                border-radius: 0 1rem 3rem;
+                box-shadow: 0 0.4rem 0.4rem, 0 -0.4rem 0.4rem;
+            }
         }
     }
 }
@@ -59,6 +71,10 @@ main {
 
     fieldset:nth-child(2) {
         margin-bottom: 1rem;
+    }
+
+    fieldset {
+        border-color: #f21499;
     }
 
     input[type="submit"] {
@@ -75,7 +91,7 @@ main {
     }
 
     input {
-        box-shadow: 0 0 0.2rem;
+        box-shadow: 0 0.1 0.2rem;
         border-radius: 0.1rem 0.4rem;
     }
 
@@ -85,6 +101,45 @@ main {
     }
 }
 
+main > img {
+    box-shadow: 0 0 0.2rem;
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.intro,
+.login_intro {
+    box-shadow: 0 0 0.4rem;
+    border-radius: 0.2rem;
+    padding: 0.6rem;
+}
+
+.login_intro {
+    margin-top: 0.5rem;
+}
+
+.change_display {
+    background-color: rgba(255, 255, 255, 0.5);
+
+    header,
+    footer {
+        background-color: rgba(255, 255, 255);
+        color: black;
+    }
+
+    header {
+        h1 {
+            color: black;
+        }
+    }
+
+    .hamburger_items {
+        background-color: rgb(123, 11, 22);
+        
+        h1 {
+            color: white;
+        }
+    }
+}
 
 footer {
     box-shadow: 0 -0.1rem 0.3rem rgb(0, 0, 0, 0.5);

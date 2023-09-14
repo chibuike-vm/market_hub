@@ -79,40 +79,96 @@ header {
     img {
         display: block;
         margin-left: auto;
+        padding-top: 0.2rem;
     }
 
     .hamburger_items {
         background-color: $hamburgerItemsBackgroundColor;
         text-align: center;
-        padding: 0.2rem;
+        padding: 0.6rem;
+        margin-top: 0;
+        margin-bottom: 0;
 
         li img {
             margin-left: auto;
             margin-right: auto;
+            padding-bottom: 0.1rem 0;
         }
 
         h1 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0.4rem;
         }
 
-        li:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        li:nth-child(5),
-        li:nth-child(6) {
-            margin-bottom: 0.871rem;
+        li:nth-child(5) {
+            margin-bottom: 0.5rem;
         }
     }
 }
 
+.toggle_switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 25px;
+    border-radius: 2rem;
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        box-shadow: 0 0 0.4rem;
+        border-radius: 2rem;
+        transition-duration: 0.4s;
+    }
+
+    span::before {
+        position: absolute;
+        content: "";
+        width: 22px;
+        height: 22px;
+        left: 4px;
+        top: 1px;
+        bottom: 1px;
+        background-image: url("./svg/darkmode.svg");
+        background-repeat: repeat;
+        background-color: rgb(135, 214, 78);
+        border-radius: 50%;
+        transition-duration: 0.4s;
+        transition-timing-function: linear;
+    }
+
+    input:checked + span::before {
+        transform: translateX(22px);
+        background-image: url("./svg/lightmode.svg");
+        background-repeat: no-repeat;
+    }
+
+    input:checked + span {
+        box-shadow: 0 0 0.4rem white;
+    }
+
+    .span_dark_bkd {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .span_light_bkd {
+        background-color: #ffffff;
+    }
+}
+     
 .dashboard_container {
     width: 100%;
-
-    .time_display,
-    aside {
-        margin-top: 1rem;
-    }
 
     h3,
     h2, 
@@ -144,27 +200,39 @@ header {
 } 
 
 .section_and_aside {
-    padding: 0.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.6rem;
 
-    aside {
-        background-color: rgba(225, 188, 166, 0.5);
+    .time_section {
         padding: 0.6rem;
 
-        article {
-            width: 100%;
-            margin: 2rem 0;
-        }
+       article {
+         background-color: rgba(69, 87, 223, 0.5);
+         padding: 0.3rem;
+         width: 100%;
+         height: auto;
+       }
+    }
 
-        ul li {
-            font-size: 1.3rem;
-            line-height: 2;
-            color: rgb(86, 5, 47);
+    aside {
+        padding: 0.6rem;
+
+        section {
+            background-color: rgba(135, 90, 47, 0.5);
+            padding: 1.2rem 0.8rem;
+
+            article {
+                width: 100%;
+            }
         }
     }
 
-    section {
-        background-color: rgba(190, 119, 156, 0.5);
-        padding: 0.6rem;
+    ul li {
+        font-size: 1.3rem;
+        line-height: 2;
+        color: rgb(124, 19, 73);
+        text-transform: capitalize;
     }
 
     label,
@@ -175,31 +243,34 @@ header {
 }
 
 main {
-    margin-top: 2rem;
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2rem;
+    width: 90%;
     padding: 0.2rem;
 
     article {
         width: 100%;
-        height: 30rem;
-        margin: 0.8rem 0;
+        height: auto;
+        padding: 1.8rem;
 
-        border: 0.2rem ridge rgba(0, 0, 0, 0.5);
+        section {
+            width: 100%;
+            height: 30rem;
+        }
     }
 
-    article:nth-child(even) {
+    article:nth-child(even) section {
         background-color: rgba(156, 209, 32, 0.5);
     }
 
-    article:nth-child(odd) {
-         background-color: rgba(3, 74, 167, 0.5);
+    article:nth-child(odd) section {
+        background-color: rgba(3, 74, 167, 0.5);
     }
 }
 
 footer {
-    margin-top: 4rem;
+    margin-top: 3rem;
     background-color: $headerAndFooterBackgroundColor;
     color: white;
     text-align: center;
