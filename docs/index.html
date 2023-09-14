@@ -21,24 +21,34 @@
         <section class="header_container">
             <div class="header" >
                 <div class="header_large" id="header_large">
-                    <ul class="header_ul">
+                    <ul class="header_ul clearfix">
                         <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
                         <li><a href="./login.html"><h1>LOGIN</h1></a></li>
                         <li><a href="./register.html"><h1>REGISTER</h1></a></li>
                         <li><a href=""><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg"></li>
+                        <li>
+                            <label class="toggle_switch">
+                                <input type="checkbox" id="checkme_large">
+                                <span id="span_id_large"></span>
+                            </label>
+                        </li>
+                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg" id="user_svg"></li>
                     </ul>
                 </div>
                 <div class="top" id="top_div">
-                    <ul class="fresh">
+                    <ul class="fresh clearfix">
                         <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
                         <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
                     </ul>
-                    <ul class="harmbuger_items open" id="hamburger_ul">
-                        <li><a href="./register.html"><h1>REGISTER</h1></a></li>
-                        <li><a href="./login.html"><h1>LOGIN</h1></a></li>
-                        <li><a href="#"><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image"></li>
+                    <ul class="hamburger_items toggle" id="hamburger_ul">
+                        <li class="hamburger_list"><a href="./register.html"><h1>REGISTER</h1></a></li>
+                        <li class="hamburger_list"><a href="./login.html"><h1>LOGIN</h1></a></li>
+                        <li class="hamburger_list"><a href="#"><h1>FAQS</h1></a></li>
+                        <li class="hamburger_list"><img src="./svg/user.svg" alt="User SVG Image"></li>
+                        <label class="toggle_switch">
+                            <input type="checkbox" id="checkme_mobile">
+                            <span id="span_id_mobile"></span>
+                        </label>
                     </ul>
                 </div>
             </div>
@@ -60,7 +70,7 @@
     </main>        
 
     <footer> 
-        <section class="footer" id="footer">
+        <section class="footer clearfix" id="footer">
             <article class="to_top">
                 <p>Back To Top</p>
                 <hr>
