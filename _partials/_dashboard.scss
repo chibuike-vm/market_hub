@@ -12,12 +12,6 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 12 Column SASS Loop Percentage Layout */
-//@for $i from 1 through 12 {
-//    $w:($i/12) * 100%;
-//    .col-#{$i} {flex-basis: $w;}
-//}
-
 html,
 body {
     height: 100%;
@@ -40,10 +34,6 @@ header {
     margin-bottom: 1rem;
     background-color: $headerAndFooterBackgroundColor;
 
-    .header_large {
-        display: none;
-    }
-
     .toggle {
         padding: 1rem;
         display: none;
@@ -58,12 +48,12 @@ header {
         margin-bottom: 0;
         padding: 1rem;
 
-        li:nth-child(2) {
-            margin-left: auto;
-        }
-
         h1 {
             font-size: 1.5rem;
+        }
+
+        h1:hover {
+            color: #86e983;
         }
     }
 
@@ -76,10 +66,38 @@ header {
         list-style-type: none;
     }
 
-    img {
-        display: block;
-        margin-left: auto;
-        padding-top: 0.2rem;
+    .hamburger_button {
+        .hamburger_parent {
+            width: 50px;
+            height: 35px;
+            padding: 1px;
+            margin-left: auto;
+            margin-top: 1.2rem;
+        }
+
+        .hamburger_parent div {
+            width: 35px;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s;
+            margin: 5px auto;
+        }
+
+        .display .first {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .display .middle {
+            opacity: 0;
+        }
+
+        .display .last {
+            transform: translate(0, -6px) rotate(45deg);
+        }
+
+        .background_dark div {
+            background-color: rgb(0, 0, 0);
+        }
     }
 
     .hamburger_items {
@@ -89,84 +107,55 @@ header {
         margin-top: 0;
         margin-bottom: 0;
 
-        li img {
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 0.1rem 0;
-        }
-
         h1 {
             font-size: 1.2rem;
             margin: 0;
             padding: 0.4rem;
         }
 
-        li:nth-child(5) {
+        li:nth-child(4) {
             margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .parent_mobile {
+            width: 50px;
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 0.9rem;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 0.4rem white;
+            padding: 2px;
+            cursor:pointer;
+        }
+
+        .child_mobile {
+            background-color: rgb(255, 255, 255);
+            width: 21px;
+            height: 16px;
+            border-radius: 0.9rem;
+            transition: 1s;
+        }
+
+        .move {
+            transform: translateX(25px);
+            background-color: rgb(0, 0, 0);
+            color: black;
+        }
+
+        .change_bkd {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 0.4rem;
         }
     }
 }
 
-.toggle_switch {
-    position: relative;
-    display: inline-block;
-    width: 52px;
-    height: 25px;
-    border-radius: 2rem;
-
-    input {
-        position: absolute;
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
-
-    span {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        box-shadow: 0 0 0.4rem;
-        border-radius: 2rem;
-        transition-duration: 0.4s;
-    }
-
-    span::before {
-        position: absolute;
-        content: "";
-        width: 22px;
-        height: 22px;
-        left: 4px;
-        top: 1px;
-        bottom: 1px;
-        background-image: url("./svg/darkmode.svg");
-        background-repeat: repeat;
-        background-color: rgb(135, 214, 78);
-        border-radius: 50%;
-        transition-duration: 0.4s;
-        transition-timing-function: linear;
-    }
-
-    input:checked + span::before {
-        transform: translateX(22px);
-        background-image: url("./svg/lightmode.svg");
-        background-repeat: no-repeat;
-    }
-
-    input:checked + span {
-        box-shadow: 0 0 0.4rem white;
-    }
-
-    .span_dark_bkd {
-        background-color: rgb(0, 0, 0);
-    }
-
-    .span_light_bkd {
-        background-color: #ffffff;
-    }
+/* JS Controlled User Svg Icon Fill Style */
+.user_svg_fill {
+    fill: rgb(0, 0, 0);
 }
-     
+
 .dashboard_container {
     width: 100%;
 
@@ -256,7 +245,7 @@ main {
 
         section {
             width: 100%;
-            height: 30rem;
+            height: 28rem;
         }
     }
 

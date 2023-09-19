@@ -1,64 +1,96 @@
 #top_div {
-    display: none;
-}
+    .hamburger_button {
+        display: none;
+    } 
 
-#header_large {
-    display: block;
-}
-
-.header_ul {
-    padding: 0.8rem;
-    margin: 0;
-
-    li {
+    .fresh,
+    .hamburger_items {
         float: left;
     }
 
-    li:nth-child(2),
-    li:nth-child(4),
-    li:nth-child(5),
-    li:nth-child(6) {
-        width: 12.5%;
+    .fresh {
+        width: 30%;
+
+        li {
+            width: 100%;
+        }
     }
 
-    li:nth-child(5) {
-        padding-top: 1.8rem;
+    .hamburger_items {
+        width: 70%;
+    }
 
-        .toggle_switch {
+    #hamburger_ul {
+        padding: 1rem;
+        display: block;
+    }
+
+    .hamburger_items {
+        background-color: transparent;
+
+        li {
+            float: left;
+            padding-top: 1.3rem;
+            width: 15%;
+        }
+
+        li:nth-child(1) {
+            width: 30%;
+        }
+
+        li:nth-child(2),
+        li:nth-child(3) {
+            width: 20%;
+        }
+    
+        svg {
             display: block;
             margin-left: auto;
         }
-    }
 
-    li:nth-child(3) {
-        width: 20%;
-    }
-
-    li:nth-child(1) {
-        width: 30%;
-
-        h1 {
-            text-align: left; 
-        }         
-    }
-
-    h1 {
-        text-align: right;
-    }
-
-    img {
-        padding-top: 1.2rem;
-    }
-
-    li:nth-child(2),
-    li:nth-child(3),
-    li:nth-child(4) {
-        h1 {
-            font-size: 1.4rem;
-            padding-top: 0.8rem;
+        li:nth-child(4) {
+            padding-top: 1.2rem;
         }
+
+        li:nth-child(5){
+            padding-top: 1.7rem;
+        }
+
+        .parent_mobile {
+            margin-left: auto;
+            margin-right: 0 ;
+        }
+
+        h1 {
+            text-align: center; 
+        } 
     }
 }
+
+/* Header Items Hover Control (START) */
+.hamburger_list a:hover,
+.hamburger_list:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.hamburger_list h1:hover {
+    background-color: #f21499;
+}
+
+.change_display {
+    .hamburger_list a:hover,
+    .hamburger_list:hover {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .hamburger_list h1:hover {
+        background-color:#f21499;
+        box-shadow: 0 0 0.4rem;
+        color: white;
+    }
+} /*  Header Items Hover Control (END) */
 
 .footer {
     article {

@@ -84,9 +84,9 @@ main {
     }
 
     legend {
-        background-color: rgb(67, 43, 2);
+        background-color:  #3a0128;
         border-radius: 0.1rem 0.4rem;
-        color: white;
+        color: rgb(255, 255, 255);
         padding: 0.1rem;
     }
 
@@ -118,7 +118,7 @@ main > img {
 }
 
 .change_display {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(249, 237, 237, 0.5);
 
     header,
     footer {
@@ -133,11 +133,22 @@ main > img {
     }
 
     .hamburger_items {
-        background-color: rgb(123, 11, 22);
+        background-color: rgb(255, 0, 0, 0.5);
         
         h1 {
-            color: white;
+            color: rgb(0, 0, 0);
         }
+    }
+
+    .hamburger_list a:hover,
+    .hamburger_list h1:hover,
+    .hamburger_list:hover {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 0.4rem;
+    }
+
+    .fresh h1:hover {
+        color: #ff0099;
     }
 }
 
