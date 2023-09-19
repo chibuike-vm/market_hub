@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="demo">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGYQSZPEQ3"></script>
@@ -19,37 +19,33 @@
 <body>
     <header>
         <section class="header_container">
-            <div class="header" >
-                <div class="header_large" id="header_large">
-                    <ul class="header_ul clearfix">
-                        <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                        <li><a href="./login.html"><h1>LOGIN</h1></a></li>
-                        <li><a href="./register.html"><h1>REGISTER</h1></a></li>
-                        <li><a href=""><h1>FAQS</h1></a></li>
-                        <li>
-                            <label class="toggle_switch">
-                                <input type="checkbox" id="checkme_large">
-                                <span id="span_id_large"></span>
-                            </label>
-                        </li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg" id="user_svg"></li>
-                    </ul>
-                </div>
-                <div class="top" id="top_div">
+            <div class="header" >               
+                <div class="top clearfix" id="top_div">
                     <ul class="fresh clearfix">
                         <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                        <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
+                        <li class="hamburger_button">
+                            <div class="hamburger_parent" id="hamburger_parent">
+                                <div class="first change_bkd_color"></div> 
+                                <div class="middle change_bkd_color"></div> 
+                                <div class="last change_bkd_color"></div>  
+                            </div>
+                        </li>  
                     </ul>
-                    <ul class="hamburger_items toggle" id="hamburger_ul">
+                    <ul class="hamburger_items toggle clearfix" id="hamburger_ul">
                         <li class="hamburger_list"><a href="./dashboard.html"><h1>DASHBOARD</h1></a></li>
                         <li class="hamburger_list"><a href="#"><h1>ORDER</h1></a></li>
-                        <li class="hamburger_list"><a href="#"><h1>ORDER HISTORY</h1></a></li>
                         <li class="hamburger_list"><a href="#"><h1>FAQS</h1></a></li>
-                        <li class="hamburger_list"><img src="./svg/user.svg" alt="User SVG Image"></li>
-                        <label class="toggle_switch">
-                            <input type="checkbox" id="checkme_mobile">
-                            <span id="span_id_mobile"></span>
-                        </label>
+                        <li class="hamburger_list">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35"  height="35" viewBox="0 0 24 24" fill="#ffffff" id="user_svg">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </li>
+                       <li>
+                            <div id="parent_mobile" class="parent_mobile">
+                                <div id="child_mobile" class="child_mobile"></div> 
+                            </div>
+                       </li>
                     </ul>
                 </div>
             </div>

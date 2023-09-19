@@ -12,12 +12,10 @@ let submitButton = document.getElementById("submitbutton");
 let loginButton = document.getElementById("login");
 let spanElement = document.getElementById("user_id");
 let hamburgerUl = document.getElementById("hamburger_ul");
-let hamburgerButton = document.getElementById("hamburger_button");
-let toggleSwitchLarge = document.getElementById("checkme_large");
-let toggleSwitchMobile = document.getElementById("checkme_mobile");
 let htmlElement = document.getElementsByTagName("html");
 let userSvg = document.getElementById("user_svg");
 let webPage = window.location.href;
+
 
 if (submitButton !== null)
 {
@@ -26,19 +24,17 @@ if (submitButton !== null)
 		let formInputs = document.querySelectorAll("input");
 		let feedback = document.getElementById("feedback");
 
-		let j = 1;
+		console.log(formInputs);
 
 		for (let i = 0; i < queryArray.length; i++) 
 		{	
-			j += 1;
-
-			if (formInputs[j].validity.valueMissing === false)
+			if (formInputs[i].validity.valueMissing === false)
 			{
-				localStorage.setItem(queryArray[i], formInputs[j].value);
+				localStorage.setItem(queryArray[i], formInputs[i].value);
 			}
 		}
 
-		if (formInputs[4].value !== formInputs[5].value) 
+		if (formInputs[2].value !== formInputs[3].value) 
 		{
 			feedback.textContent = "Passwords don't match!";
 			feedback.removeAttribute("class");
@@ -58,9 +54,11 @@ if (loginButton !== null)
         let storedPassword = localStorage.getItem("pword");
         let storedEmail = localStorage.getItem("email_address");
 
-		if (formInputs[2].validity.valueMissing === false && formInputs[3].validity.valueMissing === false)
+		console.log(formInputs);
+
+		if (formInputs[0].validity.valueMissing === false && formInputs[1].validity.valueMissing === false)
 		{
-			if (storedEmail === formInputs[2].value && storedPassword === formInputs[3].value)
+			if (storedEmail === formInputs[0].value && storedPassword === formInputs[1].value)
 			{
 				location.href = "./dashboard.html";
 			}
@@ -183,185 +181,62 @@ if (webPage.includes("dashboard"))
 	}
 }
 
-if (hamburgerButton !== null)
+
+const hambugerParent = document.getElementById("hamburger_parent");
+
+function toggleClass() 
 {
-	hamburgerButton.addEventListener("click", function() {
-		hamburgerUl.classList.toggle("toggle");
+	hambugerParent.classList.toggle("display");
+	hamburgerUl.classList.toggle("toggle");
+}
+
+hambugerParent.addEventListener("click", toggleClass);
+
+const childMobile = document.getElementById("child_mobile");
+const parentMobile = document.getElementById("parent_mobile");
+
+function toggleSwitch(inner, outer, container, userSvg, hamburgerButton) {
+	inner.addEventListener("click", function() {
+		if (inner.classList.contains("move") === true)
+		{
+			localStorage.setItem("class1", "move");
+			inner.classList.remove("move"); 
+			
+			outer.classList.remove("change_bkd"); 		
+			container.classList.remove("change_display");		
+			userSvg.classList.remove("user_svg_fill");
+			hamburgerButton.classList.remove("background_dark");
+		}
+		else
+		{
+			inner.classList.add("move");
+			localStorage.removeItem("class1");
+	
+			outer.classList.add("change_bkd");			
+			container.classList.add("change_display");
+			userSvg.classList.add("user_svg_fill");
+			hamburgerButton.classList.add("background_dark");
+
+		}
 	});
-}
-
-
-if (toggleSwitchMobile !== null) 
-{
-	toggleSwitchMobile.addEventListener("click", function() {
-
-		if (localStorage.getItem("displayModeMobile") === "dark_mode") {
-			localStorage.setItem("displayModeMobile", "change_display");
-		}
-		else 
-		{
-			localStorage.setItem("displayModeMobile", "dark_mode");
-		}
-
-		if (localStorage.getItem("displayModeMobile") === "change_display")
-		{
-			htmlElement[0].setAttribute("class", localStorage.getItem("displayModeMobile"));
-		
-			let hamburgerImgSrc = hamburgerButton.getAttribute("src");
-		
-				if (hamburgerImgSrc === "./svg/hamburger.svg") 
-				{
-					hamburgerButton.setAttribute("src", "./svg/hamburger_dark.svg");
-					
-					const spanBackground = document.getElementById("span_id_mobile");
-					spanBackground.setAttribute("class", "span_dark_bkd");
-				}
-				else
-				{
-					hamburgerButton.setAttribute("src", "./svg/hamburger.svg");
-
-					const spanBackground = document.getElementById("span_id_mobile");
-					spanBackground.setAttribute("class", "span_light_bkd");
-				}
-		}
-		else 
-		{
-			htmlElement[0].removeAttribute("class");
-			let hamburgerImgSrc = hamburgerButton.getAttribute("src");
-		
-				if (hamburgerImgSrc === "./svg/hamburger.svg") 
-				{
-					hamburgerButton.setAttribute("src", "./svg/hamburger_dark.svg");
-
-					const spanBackground = document.getElementById("span_id_mobile");
-					spanBackground.setAttribute("class",  "span_dark_bkd");
-				}
-				else
-				{
-					hamburgerButton.setAttribute("src", "./svg/hamburger.svg");
-
-					const spanBackground = document.getElementById("span_id_mobile");
-					spanBackground.setAttribute("class", "span_light_bkd");
-				}
-		}
-
-	});
-}
-
-if (window.innerWidth <= 850)
-{
-	if (localStorage.getItem("displayModeMobile") === "change_display")
+	
+	if (localStorage.getItem("class1") === "move") 
 	{
-		htmlElement[0].setAttribute("class", localStorage.getItem("displayModeMobile"));
-
-			let hamburgerImgSrc = hamburgerButton.getAttribute("src");
-
-			if (hamburgerImgSrc === "./svg/hamburger.svg") 
-			{
-				hamburgerButton.setAttribute("src", "./svg/hamburger_dark.svg");
-
-				const spanBackground = document.getElementById("span_id_mobile");
-				spanBackground.setAttribute("class",  "span_dark_bkd");
-			}
-			else
-			{
-				hamburgerButton.setAttribute("src", "./svg/hamburger.svg");
-
-				const spanBackground = document.getElementById("span_id_mobile");
-				spanBackground.setAttribute("class", "span_light_bkd");
-			}
-	}
-	else 
-	{
-		const spanBackground = document.getElementById("span_id_mobile");
-		spanBackground.setAttribute("class", "span_light_bkd");
-	}
-}
-
-if (toggleSwitchLarge !== null) 
-{
-	toggleSwitchLarge.addEventListener("click", function() {
-
-		if (localStorage.getItem("displayModeLarge") === "dark_mode") {
-			localStorage.setItem("displayModeLarge", "change_display");
-		}
-		else 
-		{
-			localStorage.setItem("displayModeLarge", "dark_mode");
-		}
-
-		if (localStorage.getItem("displayModeLarge") === "change_display")
-		{
-			htmlElement[0].setAttribute("class", localStorage.getItem("displayModeLarge"));
-		
-			let userImgSrc = userSvg.getAttribute("src");
-		
-				if (userImgSrc === "./svg/user.svg") 
-				{
-					userSvg.setAttribute("src", "./svg/user_dark.svg");
-					
-					const spanBackground = document.getElementById("span_id_large");
-					spanBackground.setAttribute("class",  "span_dark_bkd");
-				}
-				else
-				{
-					userSvg.setAttribute("src", "./svg/user.svg");
-
-					const spanBackground = document.getElementById("span_id_large");
-					spanBackground.setAttribute("class",  "span_light_bkd");
-				}
-		}
-		else 
-		{
-			htmlElement[0].removeAttribute("class");
-			let userImgSrc = userSvg.getAttribute("src");
-		
-				if (userImgSrc === "./svg/user.svg") 
-				{
-					userSvg.setAttribute("src", "./svg/user_dark.svg");
-
-					const spanBackground = document.getElementById("span_id_large");
-					spanBackground.setAttribute("class",  "span_dark_bkd");
-				}
-				else
-				{
-					userSvg.setAttribute("src", "./svg/user.svg");
-
-					const spanBackground = document.getElementById("span_id_large");
-					spanBackground.setAttribute("class",  "span_light_bkd");
-				}
-		}
-
-	});
-}
-
-
-if (window.innerWidth > 850)
-{
-	if (localStorage.getItem("displayModeLarge") === "change_display")
-	{
-		htmlElement[0].setAttribute("class", localStorage.getItem("displayModeLarge"));
-
-			let userImgSrc = userSvg.getAttribute("src");
-
-			if (userImgSrc === "./svg/user.svg") 
-			{
-				userSvg.setAttribute("src", "./svg/user_dark.svg");
-
-				const spanBackground = document.getElementById("span_id_large");
-				spanBackground.setAttribute("class",  "span_dark_bkd");
-			}
-			else
-			{
-				userSvg.setAttribute("src", "./svg/user.svg");
-
-				const spanBackground = document.getElementById("span_id_large");
-				spanBackground.setAttribute("class",  "span_light_bkd");
-			}
+		inner.classList.remove("move"); 
+		outer.classList.remove("change_bkd"); 
+		container.classList.remove("change_display"); 
+		userSvg.classList.remove("user_svg_fill");
+		hamburgerButton.classList.remove("background_dark");
 	}
 	else
 	{
-		const spanBackground = document.getElementById("span_id_large");
-		spanBackground.setAttribute("class",  "span_light_bkd");
+		inner.classList.add("move");
+		outer.classList.add("change_bkd");
+		container.classList.add("change_display");
+		userSvg.classList.add("user_svg_fill");
+		hamburgerButton.classList.add("background_dark");
 	}
 }
+
+toggleSwitch(childMobile, parentMobile, htmlElement[0], userSvg, hambugerParent);
+
