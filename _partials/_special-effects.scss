@@ -150,6 +150,26 @@ main > img {
     .fresh h1:hover {
         color: #ff0099;
     }
+
+
+    #hamburger_parent div {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #child_mobile.move {
+        transform: translateX(25px);
+        background-color: rgb(255, 255, 255) !important;
+        color: black;
+    }
+
+    #parent_mobile.change_bkd {
+        background-color: rgb(0, 0, 0) !important;
+        box-shadow: 0 0 0.4rem white;
+    }
+
+    .user_svg_fill {
+        fill: rgb(0, 0, 0);
+    }
 }
 
 footer {
