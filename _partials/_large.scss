@@ -1,3 +1,32 @@
+header {
+    position: static;
+
+    .hamburger_items {
+        position: static;
+    }
+}
+
+// checkout.html 
+.preamble {
+    margin-top: 0;
+}
+
+/**
+ * margin-top fix as a result of the "position" changes
+ * in the mobile view.
+ */
+.section_and_aside {
+    margin-top: 0;
+}
+
+.index_main {
+    margin-top: 0;
+}
+
+.aside {
+    margin-top: 0;
+} /* end */
+
 #top_div {
     .hamburger_button {
         display: none;
@@ -27,7 +56,6 @@
 
         li {
             float: left;
-            padding-top: 1.3rem;
             width: 15%;
         }
 
@@ -46,11 +74,11 @@
         }
 
         li:nth-child(4) {
-            padding-top: 1.2rem;
+            margin-bottom: 0;
         }
 
         li:nth-child(5){
-            padding-top: 1.7rem;
+           padding-top: 0.6rem;
         }
 
         .parent_mobile {

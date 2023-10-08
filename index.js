@@ -177,10 +177,22 @@ if (appData.webPage.includes("dashboard")) {
 
 function toggleClass() {
 	const hambugerParent = document.getElementById("hamburger_parent");
+    const fadeClassReps = document.querySelectorAll(".fade");
+    const headerExtension = document.querySelector(".header_extension");
 
 	hambugerParent.addEventListener("click", function () {
 		hambugerParent.classList.toggle("display");
     	appData.hamburgerUl.classList.toggle("toggle");
+
+        if (fadeClassReps !== null) {
+            fadeClassReps.forEach(function (eachClassRep) {
+                eachClassRep.classList.toggle("fade_out");
+            });
+        }
+
+        if (headerExtension !== null) {
+            headerExtension.classList.toggle("visibility");
+        }
 	});
 }
 
@@ -207,4 +219,3 @@ function toggleDisplayMode() {
 
 toggleClass();
 toggleDisplayMode();
-

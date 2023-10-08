@@ -49,28 +49,32 @@
                     </ul>
                 </div>
             </div>
-        </section>
 
-       <!--  <article>
-            <div class="header_extension clearfix">
-                <div class="search_grand_container">
+            <article class="header_extension">
+                <div class="clearfix">
                     <div class="search_parent_container">
+                        <input type="search" placeholder="Search...">
+                    </div>
+                    <div class="search_icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                             <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
                         </svg>
                     </div>
+                
+                    <div class="notification_message_container"><p class="shopping_display_msg">Shopping actions...</p></div>
+                    <div class="shopping_cart_icon">
+                        <a href="./checkout.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" id="shopping_cart">
+                                <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="shopping_cart_icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                        <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
-                    </svg>
-                </div>
-                <div class="notification_message_container">1</div>
-            </div>
-        </article> -->
+            </article>
+        </section>
     </header>
  
-    <div class="dashboard_container">
+    <div class="dashboard_container fade">
         <article class="section_and_aside clearfix"> 
             <section class="time_display time_section">
                 <article class="time_article">
@@ -123,8 +127,8 @@
                     <img src="media/bitter_leaf.jpg" alt="Bitter Leaves Image">
 
                     <div class="price_and_name_container">
-                        <h3>Bitter Leaf</h3>
-                        <p>Unit Price - #200</p>
+                        <h3 class="product_name">Bitter Leaf</h3>
+                        <p>Unit Price - <span class="product_price">#250</span></p>
                     </div>
 
                     <div class="clearfix general_container toggle_display">
@@ -134,10 +138,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -148,8 +152,8 @@
                     <img src="media/green.jpg" alt="Green Leaves Image">
                     
                     <div class="price_and_name_container">
-                        <h3>Green</h3>
-                        <p>Unit Price - #200</p>
+                        <h3 class="product_name">Green</h3>
+                        <p>Unit Price - <span class="product_price">#200</span></p>
                     </div>
 
                     <div class="clearfix general_container toggle_display">
@@ -159,10 +163,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -172,8 +176,8 @@
                 <section>
                     <img src="media/oha.jpg" alt="Oha Leaves Image">
                     <div class="price_and_name_container">
-                        <h3>Oha</h3>
-                        <p>Unit Price - #300</p>
+                        <h3 class="product_name">Oha</h3>
+                        <p>Unit Price - <span class="product_price">#300</span></p>
                     </div>
                     
                     <div class="clearfix general_container toggle_display">
@@ -183,10 +187,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -196,8 +200,8 @@
                 <section>
                     <img src="media/ugu.jpg" alt="Ugu Leaves Image">
                     <div class="price_and_name_container">
-                        <h3>Ugu</h3>
-                        <p>Unit Price - #200</p>     
+                        <h3 class="product_name">Ugu</h3>
+                        <p>Unit Price - <span class="product_price">#200</span></p>
                     </div>
 
                     <div class="clearfix general_container toggle_display">
@@ -207,10 +211,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -219,10 +223,9 @@
             <article>
                 <section>
                     <img src="media/water_leaf.jpg" alt="Water Leaves Image">
-
                     <div class="price_and_name_container">
-                        <h3>Water Leaf</h3>
-                        <p>Unit Price - #400</p>
+                        <h3 class="product_name">Water Leaf</h3>
+                        <p>Unit Price - <span class="product_price">#500</span></p>
                     </div>
 
                     <div class="clearfix general_container toggle_display">
@@ -232,10 +235,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -245,8 +248,8 @@
                 <section>
                     <img src="media/okro.jpg" alt="Okro Leaves Image">
                     <div class="price_and_name_container">
-                        <h3>Okro</h3>
-                        <p>Unit Price - #200</p>
+                        <h3 class="product_name">Okro</h3>
+                        <p>Unit Price - <span class="product_price">#200</span></p>
                     </div>
 
                     <div class="clearfix general_container toggle_display">
@@ -256,10 +259,10 @@
                         </div>
 
                         <div class="item_counter_parent">
-                            <p>1</p>
+                            <p class="counter">0</p>
                         </div>
                         <div class="remove_icon_parent">
-                            <div></div>
+                            <div class="remove_icon"></div>
                         </div>
                     </div>
                 </section>
@@ -267,7 +270,7 @@
         </main>
     </div>
 
-    <footer> 
+    <footer class="fade"> 
         <section class="footer clearfix" id="footer">
             <article class="to_top">
                 <p>Back To Top</p>

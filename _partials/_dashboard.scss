@@ -1,4 +1,7 @@
-/* To fix text adjust issues in portrait and landscape mode across browsers */
+/**
+ * To fix text adjust issues in portrait 
+ * and landscape mode across browsers 
+ */
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -31,7 +34,7 @@ body {
 }
 
 header {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     background-color: $headerAndFooterBackgroundColor;
 
     .toggle {
@@ -50,6 +53,8 @@ header {
 
         h1 {
             font-size: 1.5rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0;
         }
 
         h1:hover {
@@ -72,7 +77,6 @@ header {
             height: 35px;
             padding: 1px;
             margin-left: auto;
-            margin-top: 1.2rem;
         }
 
         .hamburger_parent div {
@@ -136,35 +140,100 @@ header {
     }
 }
 
-.header_extension {
-    background-color: white;
+// Header positioning 
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* Stay on top */
+    z-index: 1; 
 
-    .search_grand_container,
+    .hamburger_items {
+        position: fixed;
+        left: 0;
+        right: 80px;
+        height: 100%;
+    }
+} // end
+
+/**
+ * Toggled by index.js on hamburger
+ * click event
+ */
+.fade_out {
+    opacity: 0.3;
+}/* end */
+
+/* Header Extension */
+.header_extension {
+    padding-right: 0.45rem;
+}
+
+header {
+   .search_icon,
+    .search_parent_container,
     .shopping_cart_icon,
     .notification_message_container {
         float: left;
     }
 
+    .search_parent_container {
+        width: 80%;
+        margin-left: 5%;
 
-    .search_grand_container {
-        width: 50%;
-
-        .search_parent_container {
+        input {
+            font-size: 1.2rem;
             width: 100%;
-            background-color: red !important;
-            border-radius: 0.7rem;
+            box-shadow: 0 0 0.2rem;
+        }
+    }
+
+    .search_icon {
+        background-color: rgb(199, 11, 11);
+        width: 10%;
+        padding-bottom: 0.25rem;
+        box-shadow: 0 0 0.2rem;
+
+        svg {
+            fill: white;
         }
     }
 
     .shopping_cart_icon {
-        width: 15%;
+        background-color: #86e983;
+        width: 10%;
+        margin-top: 0.85rem;
+        padding-bottom: 0.1rem;
+        box-shadow: 0 0 0.2rem;
     }
 
     .notification_message_container {
-        width: 35%;
-        background-color: yellow;
+        width: 80%;
+        margin-top: 0.8rem;
+        background-color: white;
+        margin-left: 5%;
+        margin-bottom: 0.3rem;
+        
+        p {
+            font-size: 1.3rem;
+            margin: 0;
+            border: 0.1rem ridge black;
+            box-shadow: 0 0 0.2rem;
+        }
+    }
+
+    svg {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
+
+.visibility {
+    visibility: hidden;
+}
+/* end */
 
 .dashboard_container {
     width: 100%;
@@ -204,15 +273,21 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding: 0.6rem;
+    margin-top: 9rem;
 
     .time_section {
         padding: 0.6rem;
+    
+        p {
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
 
-       article {
-         background-color: rgba(69, 87, 223, 0.5);
-         padding: 0.3rem;
-         width: 100%;
-         height: auto;
+        article {
+            background-color: rgba(69, 87, 223, 0.5);
+            padding: 0.3rem;
+            width: 100%;
+            height: auto;
        }
     }
 
@@ -267,11 +342,11 @@ main {
     }
 
     article:nth-child(even) section {
-        background-color: rgba(156, 209, 32, 0.5);
+        background-color: rgb(142, 200, 193);
     }
 
     article:nth-child(odd) section {
-        background-color: rgba(3, 74, 167, 0.5);
+        background-color: rgb(242, 105, 148);
     }
 }
 
@@ -287,6 +362,7 @@ main {
     .add_icon_parent {
         width: 30%;
         padding-top: 0.7rem;
+        cursor: pointer;
 
         div:nth-child(1) {
             background-color: rgb(0, 0, 0);
@@ -313,18 +389,20 @@ main {
 
         p {
             margin: 0;
-            width: 15%;
+            width: 35%;
             text-align: center;
             margin: 0 auto;
-            border-radius: 50%;
+            border-radius: 1rem;
             background-color: rgb(255, 255, 255);
             font-size: 1rem;
+            text-align: center;
         }
     }
 
     .remove_icon_parent {
         width: 30%;
         padding-top: 1rem;
+        cursor: pointer;
 
         div {
             background-color: rgb(0, 0, 0);
@@ -362,6 +440,106 @@ footer {
     }
 }
 
+
+/**
+ * checkout.html page
+ */
+ 
+.preamble {
+    margin-top: 10rem;
+
+    p {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
+    }
+}
+
+
+.items_in_cart {
+    h3 {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        box-shadow: 0 0 0.5rem;
+    
+        th,
+        td {
+            border: 0.1rem ridge red;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+     }
+ }
+
+.calculator {
+    margin-top: 3rem;
+
+    h3 {
+        text-align: center;
+        font-size: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        border: 0.1rem ridge rgb(185, 26, 148);
+        width: 80%;
+        box-shadow: 0 0 0.5rem;
+    }
+
+    td,
+    th {
+        width: 15rem;
+        height: 4rem;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+
+    td {
+        background-color: rgb(231, 9, 94);
+    }
+
+    p {
+        width: 100%;
+        height: 100%;
+        font-size: 1.5rem;
+        color: black;
+        margin: 0;
+        padding-top: 1rem;
+        background-color: white;
+    }
+}
+
+.button_container {
+    margin-top: 3rem;
+
+    .proceed_to_payment_button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.3rem;
+        box-shadow: 0 0 0.3rem;
+        background-color: rgb(150, 218, 114);
+        cursor: pointer;
+     }
+}
+ /* end */
 
 /* Float Layout Design */
 .clearfix::after {

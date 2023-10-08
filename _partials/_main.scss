@@ -38,14 +38,14 @@ body {
     }
 
     aside {
-       padding: 1rem;
-       font-size: 1.3rem;
+        padding: 1rem;
+        font-size: 1.3rem;
     }
 }
 
 .index_body {
     main {
-        padding: 0.4rem;
+        padding: 0.2rem 0.4rem;
 
         img {
             width: 100%;
@@ -60,7 +60,7 @@ body {
 }
 
 header {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     background-color: $headerAndFooterBackgroundColor;
 
     .toggle {
@@ -79,6 +79,8 @@ header {
 
         h1 {
             font-size: 1.5rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0;
         }
 
         h1:hover {
@@ -101,7 +103,6 @@ header {
             height: 35px;
             padding: 1px;
             margin-left: auto;
-            margin-top: 1.2rem;
         }
 
         .hamburger_parent div {
@@ -165,6 +166,35 @@ header {
     }
 }
 
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    .hamburger_items {
+        position: fixed;
+        left: 0;
+        right: 80px;
+        height: 100%;
+    }
+} 
+
+.fade_out {
+    opacity: 0.3;
+}
+
+// Manage margin-top 
+.aside {
+    margin-top: 4rem;
+}
+
+.index_main {
+    margin-top: 4.4rem;
+}
+// end
+
 main {
     width: 100%;
     
@@ -203,7 +233,7 @@ main {
 }
 
 footer {
-    margin-top: 4rem;
+    margin-top: 3rem;
     background-color: $headerAndFooterBackgroundColor;
     color: white;
     text-align: center;
