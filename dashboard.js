@@ -34,8 +34,8 @@ addIconArr.forEach(function(element) {
 
         for (let i = 0; i < container.length; i++) {
             if (container[i].contains(element) && priceAndProdContainer[i].contains(productPriceArr[i])) {
-                goodsArr[i].productTotalPrice += (Number(productPriceArr[i].innerText.replace("#", "")));
                 ++goodsArr[i].counter;
+                goodsArr[i].productTotalPrice = (Number(productPriceArr[i].innerText.replace("#", "")) * goodsArr[i].counter);
                 goodsArr[i].productUnitPrice = productPriceArr[i].innerText.replace("#", "");
                 goodsArr[i].productName  = `#${productNameArr[i].innerText.toLowerCase()}`;
             }
@@ -77,6 +77,7 @@ removeIconArr.forEach(function(element) {
             if (container[i].contains(element) && container[i].contains(counterDisplayMsg[i])) {
                 if (goodsArr[i].counter > 0) {
                     counterDisplayMsg[i].textContent = --goodsArr[i].counter;
+                    goodsArr[i].productTotalPrice = (Number(productPriceArr[i].innerText.replace("#", "")) * goodsArr[i].counter);
                 }
             }
         }
