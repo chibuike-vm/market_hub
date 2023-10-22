@@ -6,8 +6,7 @@ header {
     box-shadow: 0 0.1rem 0.3rem;
 }
 
-.hamburger_list a:hover,
-.hamburger_list h1:hover,
+
 .hamburger_list:hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
@@ -140,8 +139,6 @@ main > img {
         }
     }
 
-    .hamburger_list a:hover,
-    .hamburger_list h1:hover,
     .hamburger_list:hover {
         background-color: rgb(255, 255, 255);
         box-shadow: 0 0 0.4rem;
@@ -150,7 +147,6 @@ main > img {
     .fresh h1:hover {
         color: #ff0099;
     }
-
 
     #hamburger_parent div {
         background-color: rgb(0, 0, 0);
@@ -167,7 +163,8 @@ main > img {
         box-shadow: 0 0 0.4rem white;
     }
 
-    .user_svg_fill {
+    .user_svg_fill,
+    .hamburger_svg {
         fill: rgb(0, 0, 0);
     }
 }

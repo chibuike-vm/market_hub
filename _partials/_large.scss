@@ -68,7 +68,7 @@ header {
             width: 20%;
         }
     
-        svg {
+        .user_svg_fill {
             display: block;
             margin-left: auto;
         }
@@ -77,19 +77,22 @@ header {
             margin-bottom: 0;
         }
 
-        li:nth-child(5){
-           padding-top: 0.6rem;
-        }
-
         .parent_mobile {
             margin-left: auto;
             margin-right: 0 ;
+            margin-top: 0;
         }
 
         h1 {
             text-align: center; 
         } 
     }
+}
+
+/* Remove the display of unwanted svg and text */
+.hamburger_svg,
+#profile {
+    display: none;
 }
 
 /* Header Items Hover Control (START) */
@@ -151,5 +154,13 @@ header {
         aside {
             width: 60%;
         }
+    }
+}
+
+// Pasword visibility
+#form {
+    .password,
+    .confirm_password {
+        width: 95%;
     }
 }

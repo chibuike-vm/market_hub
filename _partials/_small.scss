@@ -4,3 +4,11 @@
         margin: 0;
     }
 }
+
+// Pasword visibility
+#form {
+    .password,
+    .confirm_password {
+        width: 83.6%;
+    }
+}

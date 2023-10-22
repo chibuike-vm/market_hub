@@ -38,7 +38,7 @@ body {
     }
 
     aside {
-        padding: 1rem;
+        padding: 1rem 0.6rem;
         font-size: 1.3rem;
     }
 }
@@ -128,10 +128,20 @@ header {
 
     .hamburger_items {
         background-color: $hamburgerItemsBackgroundColor;
-        text-align: center;
         padding: 0.6rem;
         margin-top: 0;
         margin-bottom: 0;
+
+        .hamburger_svg,
+        .user_svg_fill {
+            float: left;
+            margin-right: 2rem;
+            margin-left: 0.5rem;
+        }
+
+        .ham {
+            float: left;
+        }
 
         h1 {
             font-size: 1.2rem;
@@ -139,9 +149,16 @@ header {
             padding: 0.4rem;
         }
 
+        .profile {
+            padding-left: 0.18rem;
+        }
+
         li:nth-child(4) {
             margin-bottom: 0.5rem;
-            cursor: pointer;
+        }
+
+        li:nth-child(5) {
+            margin-top: 0.5rem;
         }
 
         .parent_mobile {
@@ -149,11 +166,11 @@ header {
             height: 20px;
             background-color: rgb(255, 255, 255);
             border-radius: 0.9rem;
-            margin-left: auto;
-            margin-right: auto;
             box-shadow: 0 0 0.4rem;
             padding: 2px;
             cursor:pointer;
+            margin-left: 0.2rem;
+            margin-top: 0.5rem;
         }
 
         .child_mobile {
@@ -202,6 +219,22 @@ main {
         width: 100%;
     }
 
+    .password_invisible,
+    .password_visible {
+        float: right;
+        padding-bottom: 0.3rem;
+    }
+
+    .password,
+    .confirm_password {
+        width: 79.90%;
+        margin-bottom: 1rem;
+    }
+
+    .invisible {
+        display: none;
+    }
+
     input[type=checkbox] {
         width: 10%;
         height: 1.3rem;
@@ -211,7 +244,7 @@ main {
     label,
     legend,
     input {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     h1 {
@@ -233,7 +266,7 @@ main {
 }
 
 footer {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     background-color: $headerAndFooterBackgroundColor;
     color: white;
     text-align: center;
@@ -293,4 +326,14 @@ main {
         float: left;
         width: 100%;
     }
+}
+
+/* Canvas Styling */
+.canvas_container {
+    max-width: 1500px;
+    margin: 1.8rem auto;
+    padding: 0.2rem;
+    box-shadow: 0 0 0.3rem;
+    border-radius: 0.5rem;
+    width: 96%;
 }

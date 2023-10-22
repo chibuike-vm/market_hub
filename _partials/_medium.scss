@@ -37,3 +37,13 @@
        width: 55%;
      }
 }
+
+// Pasword visibility
+@media only screen and (width >= 768px) {
+    #form {
+        .password,
+        .confirm_password {
+            width: 90%;
+        }
+    }
+}
