@@ -219,3 +219,47 @@ function toggleDisplayMode() {
 
 toggleClass();
 toggleDisplayMode();
+
+const passwordVisibleSvg = document.querySelectorAll(".password_visible");
+const passwordInvisibleSvg = document.querySelectorAll(".password_invisible");
+const password = document.getElementById("pwrd");
+const confirmPassword = document.getElementById("conf_pwrd");
+
+function passwordSettings(e) {
+    if (e.target === passwordVisibleSvg[0]) {
+        if (passwordInvisibleSvg[0].classList.contains("invisible")) {
+            passwordVisibleSvg[0].classList.add("invisible");
+            passwordInvisibleSvg[0].classList.remove("invisible");
+    
+            password.type = "text";
+        }
+    } else if (e.target === passwordInvisibleSvg[0]) {
+        if (passwordVisibleSvg[0].classList.contains("invisible")) {
+            passwordInvisibleSvg[0].classList.add("invisible");
+            passwordVisibleSvg[0].classList.remove("invisible");
+    
+            password.type = "password";
+       }
+    }
+
+    if (e.target === passwordVisibleSvg[1]) {
+        if (passwordInvisibleSvg[1].classList.contains("invisible")) {
+            passwordVisibleSvg[1].classList.add("invisible");
+            passwordInvisibleSvg[1].classList.remove("invisible");
+    
+            confirmPassword.type = "text";
+       }
+    } else if (e.target === passwordInvisibleSvg[1]) {
+        if (passwordVisibleSvg[1].classList.contains("invisible")) {
+            passwordInvisibleSvg[1].classList.add("invisible");
+            passwordVisibleSvg[1].classList.remove("invisible");
+    
+            confirmPassword.type = "password";
+       }
+    }
+}
+
+const HTMLform = document.getElementById("form");
+if (HTMLform !== null) {
+    HTMLform.addEventListener("click", passwordSettings);
+}
