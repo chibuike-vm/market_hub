@@ -14,38 +14,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Home | Freshenger</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.min.css">
 </head>
 <body class="index_body">
     <header>
         <section class="header_container">
-            <div class="header" >
-                <div class="header_large" id="header_large">
-                    <ul class="header_ul">
+            <div class="header" >               
+                <div class="top clearfix" id="top_div">
+                    <ul class="fresh clearfix">
                         <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                        <li><a href="./login.html"><h1>LOGIN</h1></a></li>
-                        <li><a href="./register.html"><h1>REGISTER</h1></a></li>
-                        <li><a href=""><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image" class="svg"></li>
+                        <li class="hamburger_button">
+                            <div class="hamburger_parent  background_dark" id="hamburger_parent">
+                                <div class="first change_bkd_color"></div> 
+                                <div class="middle change_bkd_color"></div> 
+                                <div class="last change_bkd_color"></div>  
+                            </div>
+                        </li>  
                     </ul>
-                </div>
-                <div class="top" id="top_div">
-                    <ul class="fresh">
-                        <li><a href="./index.html"><h1>FRESHENGER</h1></a></li>
-                        <li><img src="./svg/hamburger.svg" alt="Hamburger SVG Image" class="svg" id="hamburger_button"></li>
-                    </ul>
-                    <ul class="harmbuger_items open" id="hamburger_ul">
-                        <li><a href="./register.html"><h1>REGISTER</h1></a></li>
-                        <li><a href="./login.html"><h1>LOGIN</h1></a></li>
-                        <li><a href="#"><h1>FAQS</h1></a></li>
-                        <li><img src="./svg/user.svg" alt="User SVG Image"></li>
+                    <ul class="hamburger_items toggle clearfix" id="hamburger_ul">
+                        <li class="hamburger_list clearfix">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" class="hamburger_svg" fill="#ffffff">
+                                <path d="M240-160q-33 0-56.5-23.5T160-240q0-33 23.5-56.5T240-320q33 0 56.5 23.5T320-240q0 33-23.5 56.5T240-160Zm0-240q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm0-240q-33 0-56.5-23.5T160-720q0-33 23.5-56.5T240-800q33 0 56.5 23.5T320-720q0 33-23.5 56.5T240-640Zm240 0q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Zm240 0q-33 0-56.5-23.5T640-720q0-33 23.5-56.5T720-800q33 0 56.5 23.5T800-720q0 33-23.5 56.5T720-640ZM480-400q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm40 240v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
+                            </svg>
+                            <a href="./register.html"><h1 class="ham">REGISTER</h1></a>
+                        </li>
+                        <li class="hamburger_list clearfix">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" class="hamburger_svg" fill="#ffffff">
+                                <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+                            </svg>
+                            <a href="./login.html"><h1 class="ham">LOGIN</h1></a>
+                        </li>
+                        <li class="hamburger_list clearfix">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" class="hamburger_svg" fill="#ffffff">
+                                <path d="M476-280q21 0 35.5-14.5T526-330q0-21-14.5-35.5T476-380q-21 0-35.5 14.5T426-330q0 21 14.5 35.5T476-280Zm-36-154h74q0-17 1.5-29t6.5-23q5-11 12.5-20.5T556-530q35-35 49.5-58.5T620-642q0-53-36-85.5T487-760q-55 0-93.5 27T340-658l66 26q7-27 28-43.5t49-16.5q27 0 45 14.5t18 38.5q0 17-11 36t-37 42q-17 14-27.5 27.5T453-505q-7 15-10 31.5t-3 39.5Zm40 394L360-160H200q-33 0-56.5-23.5T120-240v-560q0-33 23.5-56.5T200-880h560q33 0 56.5 23.5T840-800v560q0 33-23.5 56.5T760-160H600L480-40ZM200-240h192l88 88 88-88h192v-560H200v560Zm280-280Z"/>
+                            </svg>
+                            <a href="#"><h1 class="ham">FAQS</h1></a>
+                        </li>
+                        <li class="hamburger_list clearfix">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35"  height="35" viewBox="0 0 24 24" fill="#ffffff" id="user_svg" class="user_svg_fill">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                            <a href="#"><h1 id="profile" class="ham profile">PROFILE</h1></a>
+                        </li>
+                       <li  class="hamburger_list clearfix">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35" class="hamburger_svg" fill="#ffffff">
+                                <path d="m480-260 60-60h100v-100l60-60-60-60v-100H540l-60-60-60 60H320v100l-60 60 60 60v100h100l60 60Zm0-100v-240q50 0 85 35t35 85q0 50-35 85t-85 35ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/>
+                            </svg>
+                            <div id="parent_mobile" class="parent_mobile change_bkd ham">
+                                <div id="child_mobile" class="child_mobile move"></div> 
+                            </div>
+                       </li>
                     </ul>
                 </div>
             </div>
         </section>
     </header>
 
-    <main class="main">
+    <main class="main index_main fade">
         <!-- The width and height ratios are added to the image here to fix image jank issues. Its
              spacifically for image jank removal which usually happens during a slow internet network
              connection -->
@@ -57,10 +83,16 @@
                 utility from our services remains our topmost priority.
             </p>
         </article>
-    </main>        
+    </main>
+    
+    <div>
+        <div class="canvas_container">
+            <canvas id="canvas" class="canvas"></canvas>
+        </div>
+    </div>
 
-    <footer> 
-        <section class="footer" id="footer">
+    <footer class="fade"> 
+        <section class="footer clearfix" id="footer">
             <article class="to_top">
                 <p>Back To Top</p>
                 <hr>
@@ -81,4 +113,6 @@
     </footer>
 </body>
 <script src="index.js"></script>
+<script src="./chart.umd.min.js"></script>
+<script src="./chart.js"></script>
 </html>

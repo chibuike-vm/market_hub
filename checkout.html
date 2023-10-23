@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Dashboard | Freshenger</title>
+    <title>Checkout | Freshenger</title>
     <link rel="stylesheet" href="dash.min.css">
 </head>
-<body class="dashboard_body">
+<body>
     <header>
         <section class="header_container">
             <div class="header" >               
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <article class="header_extension">
+            <article class="header_extension" >
                 <div class="clearfix">
                     <div class="search_parent_container">
                         <input type="search" placeholder="Search...">
@@ -92,201 +92,88 @@
             </article>
         </section>
     </header>
- 
-    <div class="dashboard_container fade">
-        <article class="section_and_aside clearfix"> 
-            <section class="time_display time_section">
-                <article class="time_article">
-                    <p id="time_insert"></p>
-                    <hr>
-                    <p>Dear <span id="user_id"></span>, welcome to your dashboard!</p>
-                </article>
-            </section>
 
-            <aside id="aside">
-                <section class="aside_section">
-                    <article>
-                        <h2>TASKS TO DO</h2>
-                        <ol>
-                            <li><Button id="store_json">Store JSON Data into LocalSorage</Button></li>
-                            <li><button id="retrieve_json">Retrieve & Display Stored JSON Data</button>
-                        </ol>
-                    </article>
+    <div class="preamble fade">
+        <p>
+            Dear <span id="username"></span>, thank you for shopping with <strong>Freshenger</strong>. Kindly go through the summary of the items you added to 
+            the cart to confirm their details. When you are satisfied, you can proceed to the payment 
+            section. As soon as your payment is confirmed to be successful, the purchase and delivery of your shopped items 
+            will commence and the beautiful part is that you can be able to track the purchase and delivery of your shopped 
+            items in real time until it gets to your doorstep.
+        </p>
+        <p>
+            There's also a <strong>calculator </strong> provided below to assist you with any arithmetic calculations you might want to do.<br><br>
+            Be rest assured that <strong>Freshenger</strong> is the real deal and our customer's satisfaction, their maximization of 
+            functional utility, comfort, luxury and quality delivery remains our steadfast objective, priority and action plan.
+        </p>
+    </div>
 
-                    <article>
-                        <p id="feed_back_msg"></p>
-                    </article>
+    <div class="items_in_cart fade">
+        <h3>Summary Of Order Items</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit Price (#)</th>
+                    <th>Quantity</th>
+                    <th>Total Price (#)</th>
+                </tr>
+            </thead>
+            <tbody id="table_body"></tbody>
+            <tfoot>
+                <th colspan="3">Total Price of all Goods (#)</th>
+                <th id="cum_total_price"></th>
+            </tfoot>
+        </table>
+    </div>
 
-                    <article class="display_section">
-                        <ul id="display_msg"></ul>
-                    </article>
+    <div class="calculator fade">
+        <h3>Arithmetic Calculator</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4"><p id="calc_display"></p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td">1</td>
+                    <td class="td">6</td>
+                    <td class="td">*</td>
+                    <td class="td">Delete</td>
+                </tr>
+    
+                <tr>
+                    <td class="td">2</td>
+                    <td class="td">7</td>
+                    <td class="td">+</td>
+                    <td rowspan="2" class="td">Equals</td>
+                </tr>
+    
+                <tr>
+                    <td class="td">3</td>
+                    <td class="td">8</td>
+                    <td class="td">/</td>
+                </tr>
+    
+                <tr>
+                    <td class="td">4</td>
+                    <td class="td">9</td>
+                    <td class="td">-</td>
+                    <td rowspan="2" class="td">Clear Screen</td>
+                </tr>
+    
+                <tr>
+                    <td class="td">5</td>
+                    <td class="td">0</td>
+                    <td class="td">.</td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
 
-                    <article>
-                        <p>
-                            You want to change your username? We've got you covered, just click the button below.<br><br>
-                            <button id="button_id">Change Your Username</button>
-                        </p>
-                    </article>
-
-                    <article id="article_display" class="hide">
-                        <label for="username_id">Enter the New Username</label>
-                        <input type="text" name="username" id="username_id" required maxlength="12">
-
-                        <p id="return_info"></p>
-
-                        <input type="button" value="Submit" id="submit_id">
-                    </article>
-                </aside>
-            </section>
-        </article>  
-
-        <main id="main" class="clearfix">
-            <article>
-                <section>
-                    <img src="media/bitter_leaf.jpg" alt="Bitter Leaves Image">
-
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Bitter Leaf</h3>
-                        <p>Unit Price - <span class="product_price">#250</span></p>
-                    </div>
-
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article>
-                <section>
-                    <img src="media/green.jpg" alt="Green Leaves Image">
-                    
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Green</h3>
-                        <p>Unit Price - <span class="product_price">#200</span></p>
-                    </div>
-
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article>
-                <section>
-                    <img src="media/oha.jpg" alt="Oha Leaves Image">
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Oha</h3>
-                        <p>Unit Price - <span class="product_price">#300</span></p>
-                    </div>
-                    
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article>
-                <section>
-                    <img src="media/ugu.jpg" alt="Ugu Leaves Image">
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Ugu</h3>
-                        <p>Unit Price - <span class="product_price">#200</span></p>
-                    </div>
-
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article>
-                <section>
-                    <img src="media/water_leaf.jpg" alt="Water Leaves Image">
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Water Leaf</h3>
-                        <p>Unit Price - <span class="product_price">#500</span></p>
-                    </div>
-
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-            <article>
-                <section>
-                    <img src="media/okro.jpg" alt="Okro Leaves Image">
-                    <div class="price_and_name_container">
-                        <h3 class="product_name">Okro</h3>
-                        <p>Unit Price - <span class="product_price">#200</span></p>
-                    </div>
-
-                    <div class="clearfix general_container toggle_display">
-                        <div class="add_icon_parent" id="add_icon">
-                            <div></div>
-                            <div></div>
-                        </div>
-
-                        <div class="item_counter_parent">
-                            <p class="counter">0</p>
-                        </div>
-                        <div class="remove_icon_parent">
-                            <div class="remove_icon"></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-        </main>
+    <div class="button_container fade">
+        <button class="proceed_to_payment_button">Proceed to Payment Section</button>
     </div>
 
     <footer class="fade"> 
@@ -312,4 +199,5 @@
 </body>
 <script src="./index.js"></script>
 <script src="./dashboard.js"></script>
+<script src="./simple-calculator.js"></script>
 </html>

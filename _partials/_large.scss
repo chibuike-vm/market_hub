@@ -1,20 +1,166 @@
-main {
-    width: 60%;
+header {
+    position: static;
+
+    .hamburger_items {
+        position: static;
+    }
 }
+
+// checkout.html 
+.preamble {
+    margin-top: 0;
+}
+
+/**
+ * margin-top fix as a result of the "position" changes
+ * in the mobile view.
+ */
+.section_and_aside {
+    margin-top: 0;
+}
+
+.index_main {
+    margin-top: 0;
+}
+
+.aside {
+    margin-top: 0;
+} /* end */
+
+#top_div {
+    .hamburger_button {
+        display: none;
+    } 
+
+    .fresh,
+    .hamburger_items {
+        float: left;
+    }
+
+    .fresh {
+        width: 30%;
+
+        li {
+            width: 100%;
+        }
+    }
+
+    #hamburger_ul {
+        padding: 1rem;
+        display: block;
+    }
+
+    .hamburger_items {
+        width: 70%;
+        background-color: transparent;
+
+        li {
+            float: left;
+            width: 15%;
+        }
+
+        li:nth-child(1) {
+            width: 30%;
+        }
+
+        li:nth-child(2),
+        li:nth-child(3) {
+            width: 20%;
+        }
+    
+        .user_svg_fill {
+            display: block;
+            margin-left: auto;
+        }
+
+        li:nth-child(4) {
+            margin-bottom: 0;
+        }
+
+        .parent_mobile {
+            margin-left: auto;
+            margin-right: 0 ;
+            margin-top: 0;
+        }
+
+        h1 {
+            text-align: center; 
+        } 
+    }
+}
+
+/* Remove the display of unwanted svg and text */
+.hamburger_svg,
+#profile {
+    display: none;
+}
+
+/* Header Items Hover Control (START) */
+.hamburger_list a:hover,
+.hamburger_list:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.hamburger_list h1:hover {
+    background-color: #f21499;
+}
+
+.change_display {
+    .hamburger_list a:hover,
+    .hamburger_list:hover {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .hamburger_list h1:hover {
+        background-color:#f21499;
+        box-shadow: 0 0 0.4rem;
+        color: white;
+    }
+} /*  Header Items Hover Control (END) */
 
 .footer {
-    .art {
-        grid-column-start: span 3;
+    article {
+        height: auto;
     }
 
-    article:nth-of-type(10) {
-        grid-column-start: span 12;
+    .art,
+    .art:nth-child(10) {
+        width: 33.33333%;
     }
 }
 
-/* Dashboard (dashboard.html) Design */
 .dashboard_container {
-    main article {
-        grid-column-start: span 4;
+    main {
+        width: 100%;
+    
+        article{
+           width: 33.3333333%;
+        }
+    }
+
+    .section_and_aside {
+        .time_display,
+        aside {
+            float: left;
+        }
+    
+        .time_display {
+            width: 40%;
+            height: 20rem;
+        }
+    
+        aside {
+            width: 60%;
+        }
+    }
+}
+
+// Pasword visibility
+#form {
+    .password,
+    .confirm_password {
+        width: 95%;
     }
 }

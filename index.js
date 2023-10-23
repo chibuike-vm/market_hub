@@ -8,176 +8,258 @@ for (let i = 0; i < 6; i++) {
 	localStorage.setItem(queryArray[i], queryParameters.get(queryArray[i]));
 } */
 
-let submitButton = document.getElementById("submitbutton");
-let loginButton = document.getElementById("login");
-let spanElement = document.getElementById("user_id");
-let hamburgerUl = document.getElementById("hamburger_ul");
-let hamburgerButton = document.getElementById("hamburger_button");
-let webPage = window.location.href;
+let appData = {
+    submitButton: document.getElementById("submitbutton"),
+    loginButton: document.getElementById("login"),
+    spanElement: document.getElementById("user_id"),
+    hamburgerUl: document.getElementById("hamburger_ul"),
+    htmlElement: document.getElementsByTagName("html"),
+    queryArray: [
+        "fullname",
+        "username",
+        "pword",
+        "confirm_pword",
+        "phone_number",
+        "email_address",
+        "status",
+    ],
+    formInputs: document.querySelectorAll("input"),
+    webPage: window.location.href,
+};
 
-if (submitButton !== null)
-{
-	submitButton.addEventListener("click", function (e) {
-		let queryArray = ["fullname", "username", "pword", "confirm_pword", "phone_number", "email_address", "status"];
-		let formInputs = document.querySelectorAll("input");
-		let feedback = document.getElementById("feedback");
+let dashboardData = {
+    storeJSONButton: document.getElementById("store_json"),
+    retrieveJSONButton: document.getElementById("retrieve_json"),
+    displayListData: document.getElementById("display_msg"),
+    feedBackParagraph: document.getElementById("feed_back_msg"),
+    chngeYourUnameButton: document.getElementById("button_id"),
+    chngeYourUnameArtDisplay: document.getElementById("article_display"),
+    chngeYourUnameInput: document.getElementById("username_id"),
+    chngeYourUnameSubmitButton: document.getElementById("submit_id"),
+    returnSubmitMsg: document.getElementById("return_info"),
+    timeInsert: document.getElementById("time_insert"),
+};
 
-		for (let i = 0; i < queryArray.length; i++) 
-		{	
-			if (formInputs[i].validity.valueMissing === false)
-			{
-				localStorage.setItem(queryArray[i], formInputs[i].value);
-			}
-		}
+function registerUser(eventObject, feedback) {
+    feedback = document.getElementById("feedback");
 
-		if (formInputs[2].value !== formInputs[3].value) 
-		{
-			feedback.textContent = "Passwords don't match!";
-			feedback.removeAttribute("class");
-			e.preventDefault();
-		}
-		else
-		{
-			feedback.setAttribute("class", "feedback");
-		} 
-	});
+    for (let i = 0; i < appData.queryArray.length; i++) {
+        if (appData.formInputs[i].validity.valueMissing === false) {
+            localStorage.setItem(
+                appData.queryArray[i],
+                appData.formInputs[i].value
+            );
+        }
+    }
+
+    if (appData.formInputs[2].value !== appData.formInputs[3].value) {
+        feedback.textContent = "Passwords don't match!";
+        feedback.removeAttribute("class");
+        eventObject.preventDefault();
+    } else {
+        feedback.setAttribute("class", "feedback");
+    }
 }
 
-if (loginButton !== null)
-{
-    loginButton.addEventListener("click", function (e) {
-        let formInputs = document.querySelectorAll("input");
-        let storedPassword = localStorage.getItem("pword");
-        let storedEmail = localStorage.getItem("email_address");
+if (appData.submitButton !== null) {
+    appData.submitButton.addEventListener("click", registerUser);
+}
 
-		if (formInputs[0].validity.valueMissing === false && formInputs[1].validity.valueMissing === false)
-		{
-			if (storedEmail === formInputs[0].value && storedPassword === formInputs[1].value)
-			{
-				location.href = "./dashboard.html";
-			}
-			else
-			{
-				feedback.textContent = "Invalid Email or Password!";
-			}
+function loginUser(eventObject, storedPassword, storedEmail) {
+    storedPassword = localStorage.getItem("pword");
+    storedEmail = localStorage.getItem("email_address");
 
-			e.preventDefault();
-		}
-    });
+    if (
+        appData.formInputs[0].validity.valueMissing === false &&
+        appData.formInputs[1].validity.valueMissing === false
+    ) {
+        if (
+            storedEmail === appData.formInputs[0].value &&
+            storedPassword === appData.formInputs[1].value
+        ) {
+            location.href = "./dashboard.html";
+        } else {
+            feedback.textContent = "Invalid Email or Password!";
+        }
+
+        eventObject.preventDefault();
+    }
+}
+
+if (appData.loginButton !== null) {
+    appData.loginButton.addEventListener("click", loginUser);
 }
 
 function setUsername() {
-	let username = localStorage.getItem("username");
-	return username;
+    let username = localStorage.getItem("username");
+    return username;
 }
 
-if (spanElement !== null)
-{
-	spanElement.textContent = setUsername();
+if (appData.spanElement !== null) {
+    appData.spanElement.textContent = setUsername();
 }
 
-let objectData =
-{
-	vegetables: [{name: "ugu", amount: "$100"}, {name: "green", amount: "$200"}],
-	fruits: [{name: "mango", amount: "$200"}, {name: "orange", amount: "$400"}]
-};
+if (dashboardData.storeJSONButton !== null) {
+	let objectData = {
+		vegetables: [
+			{ name: "ugu", amount: "$100" },
+			{ name: "green", amount: "$200" },
+		],
+		fruits: [
+			{ name: "mango", amount: "$200" },
+			{ name: "orange", amount: "$400" },
+		],
+	};
 
-let dashboardData =
-{
-	storeJSONButton: document.getElementById("store_json"),
-	retrieveJSONButton: document.getElementById("retrieve_json"),
-	displayListData: document.getElementById("display_msg"),
-	feedBackParagraph: document.getElementById("feed_back_msg"),
-	chngeYourUnameButton: document.getElementById("button_id"),
-	chngeYourUnameArtDisplay: document.getElementById("article_display"),
-	chngeYourUnameInput: document.getElementById("username_id"),
-	chngeYourUnameSubmitButton: document.getElementById("submit_id"),
-	returnSubmitMsg: document.getElementById("return_info"),
-	timeInsert: document.getElementById("time_insert")
+    dashboardData.storeJSONButton.addEventListener("click", function () {
+        let objectDataStringified = JSON.stringify(objectData);
+        localStorage.setItem("json", objectDataStringified);
+        dashboardData.feedBackParagraph.textContent = "JSON data storage was successful!";
+        dashboardData.displayListData.setAttribute("class", "hide");
+    });
 }
 
-if (dashboardData.storeJSONButton !== null)
-{
-	dashboardData.storeJSONButton.addEventListener("click", function () {
-		let objectDataStringified = JSON.stringify(objectData);
-		localStorage.setItem("json", objectDataStringified);
-		dashboardData.feedBackParagraph.textContent = "JSON data storage was successful!";
-		dashboardData.displayListData.setAttribute("class", "hide");
+if (dashboardData.retrieveJSONButton !== null) {
+    dashboardData.retrieveJSONButton.addEventListener("click", function () {
+        let parsedJSON = JSON.parse(localStorage.getItem("json"));
+
+        let strData1 = "";
+        let strData2 = "";
+
+        for (let i = 0; i < 2; i++) {
+            strData1 += `<li> ${parsedJSON.vegetables[i].name}: ${parsedJSON.vegetables[i].amount} </li>`;
+            strData2 += `<li> ${parsedJSON.fruits[i].name}: ${parsedJSON.fruits[i].amount} </li>`;
+        }
+
+        dashboardData.feedBackParagraph.textContent = "JSON data retrieval and display was successful! See the data items below.";
+        dashboardData.displayListData.innerHTML = strData1 + strData2;
+        dashboardData.displayListData.removeAttribute("class");
+    });
+}
+
+if (dashboardData.chngeYourUnameButton !== null) {
+    dashboardData.chngeYourUnameButton.addEventListener("click", function () {
+        dashboardData.chngeYourUnameArtDisplay.removeAttribute("class");
+    });
+}
+
+if (dashboardData.chngeYourUnameSubmitButton !== null) {
+    dashboardData.chngeYourUnameSubmitButton.addEventListener("click", function () {
+			if (dashboardData.chngeYourUnameInput.validity.valueMissing === false) {
+				localStorage.setItem( "username", dashboardData.chngeYourUnameInput.value);
+				location.href = "./dashboard.html";
+			} else {
+				dashboardData.returnSubmitMsg.textContent = "The input field can't be empty.";
+				//dashboardData.returnSubmitMsg.scrollIntoView(true);
+			}
+        }
+    );
+}
+
+if (appData.webPage.includes("dashboard")) {
+    let timeObjectArg = {
+        dateStyle: "short",
+        timeStyle: "short",
+    };
+
+    let DateAndTimeFormat = new Date();
+    let timeInHrs = DateAndTimeFormat.getHours();
+    let fDateAndTime = DateAndTimeFormat.toLocaleString("en-NG", timeObjectArg);
+
+    if (timeInHrs >= 0 && timeInHrs < 12) {
+        dashboardData.timeInsert.innerHTML = `Good Morning <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+    } else if (timeInHrs >= 12 && timeInHrs < 16) {
+        dashboardData.timeInsert.innerHTML = `Good Afternoon <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+    } else if (timeInHrs >= 16 && timeInHrs <= 23) {
+        dashboardData.timeInsert.innerHTML = `Good Evening <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
+    }
+}
+
+function toggleClass() {
+	const hambugerParent = document.getElementById("hamburger_parent");
+    const fadeClassReps = document.querySelectorAll(".fade");
+    const headerExtension = document.querySelector(".header_extension");
+
+	hambugerParent.addEventListener("click", function () {
+		hambugerParent.classList.toggle("display");
+    	appData.hamburgerUl.classList.toggle("toggle");
+
+        if (fadeClassReps !== null) {
+            fadeClassReps.forEach(function (eachClassRep) {
+                eachClassRep.classList.toggle("fade_out");
+            });
+        }
+
+        if (headerExtension !== null) {
+            headerExtension.classList.toggle("visibility");
+        }
 	});
 }
 
-if (dashboardData.retrieveJSONButton !== null)
-{
-	dashboardData.retrieveJSONButton.addEventListener("click", function () {
-		let parsedJSON = JSON.parse(localStorage.getItem("json"));
+function toggleDisplayMode() {
+	const container = document.getElementsByTagName("html")[0];
+	const inner = document.getElementById("child_mobile");
 
-		let strData1 = "";
-		let strData2 = "";
+    inner.addEventListener("click", function () {
+        if (container.classList.contains("change_display") === true) {
+            localStorage.setItem("darkmode","change_display");
+			container.classList.remove("change_display");
+        } else {
+            container.classList.add("change_display");
+            localStorage.removeItem("darkmode");
+        }
+    });
 
-		for (let i = 0; i < 2; i++)
-		{
-			strData1 += `<li> ${parsedJSON.vegetables[i].name}: ${parsedJSON.vegetables[i].amount} </li>`;
-			strData2 += `<li> ${parsedJSON.fruits[i].name}: ${parsedJSON.fruits[i].amount} </li>`;
-		}
-		
-		dashboardData.feedBackParagraph.textContent = "JSON data retrieval and display was successful! See the data items below.";
-		dashboardData.displayListData.innerHTML = strData1 + strData2;
-		dashboardData.displayListData.removeAttribute("class");
-	});
+    if (localStorage.getItem("darkmode") === "change_display") {
+        container.classList.remove("change_display");
+    } else {
+		container.classList.add("change_display");
+    }
 }
 
-if (dashboardData.chngeYourUnameButton !== null)
-{
-	dashboardData.chngeYourUnameButton.addEventListener("click", function () {
-		dashboardData.chngeYourUnameArtDisplay.removeAttribute("class");
-	});
+toggleClass();
+toggleDisplayMode();
+
+const passwordVisibleSvg = document.querySelectorAll(".password_visible");
+const passwordInvisibleSvg = document.querySelectorAll(".password_invisible");
+const password = document.getElementById("pwrd");
+const confirmPassword = document.getElementById("conf_pwrd");
+
+function passwordSettings(e) {
+    if (e.target === passwordVisibleSvg[0]) {
+        if (passwordInvisibleSvg[0].classList.contains("invisible")) {
+            passwordVisibleSvg[0].classList.add("invisible");
+            passwordInvisibleSvg[0].classList.remove("invisible");
+    
+            password.type = "text";
+        }
+    } else if (e.target === passwordInvisibleSvg[0]) {
+        if (passwordVisibleSvg[0].classList.contains("invisible")) {
+            passwordInvisibleSvg[0].classList.add("invisible");
+            passwordVisibleSvg[0].classList.remove("invisible");
+    
+            password.type = "password";
+       }
+    }
+
+    if (e.target === passwordVisibleSvg[1]) {
+        if (passwordInvisibleSvg[1].classList.contains("invisible")) {
+            passwordVisibleSvg[1].classList.add("invisible");
+            passwordInvisibleSvg[1].classList.remove("invisible");
+    
+            confirmPassword.type = "text";
+       }
+    } else if (e.target === passwordInvisibleSvg[1]) {
+        if (passwordVisibleSvg[1].classList.contains("invisible")) {
+            passwordInvisibleSvg[1].classList.add("invisible");
+            passwordVisibleSvg[1].classList.remove("invisible");
+    
+            confirmPassword.type = "password";
+       }
+    }
 }
 
-if (dashboardData.chngeYourUnameSubmitButton !== null)
-{
-	dashboardData.chngeYourUnameSubmitButton.addEventListener("click", function () {
-		if (dashboardData.chngeYourUnameInput.validity.valueMissing === false)
-		{
-			localStorage.setItem("username", dashboardData.chngeYourUnameInput.value);
-			location.href = "./dashboard.html";
-		}
-		else
-		{
-			dashboardData.returnSubmitMsg.textContent = "The input field can't be empty.";
-			dashboardData.returnSubmitMsg.scrollIntoView(true);
-		}
-		});
-}
-
-if (webPage.includes("dashboard"))
-{
-	let timeObjectArg =
-	{
-		dateStyle: "short",
-		timeStyle: "short"
-	}
-
-	let DateAndTimeFormat = new Date();
-	let timeInHrs = DateAndTimeFormat.getHours();
-	let fDateAndTime = DateAndTimeFormat.toLocaleString("en-NG", timeObjectArg);
-	
-	if (timeInHrs >= 0 && timeInHrs < 12)
-	{
-		dashboardData.timeInsert.innerHTML = `Good Morning <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
-	}
-	else if (timeInHrs >= 12 && timeInHrs < 16)
-	{
-		dashboardData.timeInsert.innerHTML = `Good Afternoon <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
-	}
-	else if (timeInHrs >= 16 && timeInHrs <= 23)
-	{
-		dashboardData.timeInsert.innerHTML = `Good Evening <span>${setUsername()}</span>!<br><hr>${fDateAndTime}`;
-	}
-}
-
-if (hamburgerButton !== null)
-{
-	hamburgerButton.addEventListener("click", function() {
-		hamburgerUl.classList.toggle("open");
-	});
+const HTMLform = document.getElementById("form");
+if (HTMLform !== null) {
+    HTMLform.addEventListener("click", passwordSettings);
 }

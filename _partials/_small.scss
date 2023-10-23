@@ -1,35 +1,14 @@
-main {
-    justify-self: center;
-    width: 90%;
-}
-
-aside {
-    justify-self: center;
-}
-
-.footer {
-    justify-items: center;
-
-    .to_top {
-      hr {
-        border-width: 0.2rem;
-      }
+.fresh {
+    li:nth-of-type(1) h1 {
+        font-size: 1.8rem;
+        margin: 0;
     }
-
-    .art {
-        grid-column-start: span 6;
-        padding: 0.4rem;
-    }
-
-    .last {
-        grid-column-start: span 12;
-        text-align: center;
-    } 
 }
 
-/* Dashboard (dashboard.html) Design */
-.dashboard_container {
-    main article {
-        grid-column-start: span 6;
+// Pasword visibility
+#form {
+    .password,
+    .confirm_password {
+        width: 83.6%;
     }
 }

@@ -6,17 +6,16 @@
 
 @import "_partials/_special-effects";
 
-@import "_partials/main";
+@import "_partials/dashboard";
 
 @media only screen and (width >= 320px) {
-  @import "_partials/small";
+    @import "_partials/small";
 }
 
 @media only screen and (width >= 540px) {
-  @import "_partials/_medium";
+    @import "_partials/_medium";
 }
 
 @media only screen and (width >= 850px) {
-  @import "_partials/_large";
+    @import "_partials/_large";
 }
-
