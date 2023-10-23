@@ -52,13 +52,13 @@ var myChart = new Chart(canvas.getContext("2d"), myChartConfig);
 
 window.addEventListener("click", function() {
     for (let i = 0; i < myChart.data.datasets[0].data.length; i++) {
-        localStorage.setItem(`datapoint${i}`, `${myChart.data.datasets[0].data[i] += 200}`)
+        localStorage.setItem(`datapoint${i}`, `${myChart.data.datasets[0].data[i] += 200}`);
     }
 });
 
 function mySetInterval() {
     for (let i = 0; i < myChart.data.datasets[0].data.length; i++) {
-        myChart.data.datasets[0].data[i] = Number(localStorage.getItem(`datapoint${i}`));
+        myChart.data.datasets[0].data[i] += Number(localStorage.getItem(`datapoint${i}`));
     }
 
     myChart.update();
